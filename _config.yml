@@ -215,7 +215,18 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 #social:
   #LinkLabel: Link
-
+social:
+  Github: true
+  Weibo: true
+  Wechat: false
+  QQ: false
+social_link:
+  Github: https://github.com/qiutongxue
+  Weibo: https://weibo.com/u/5899574062
+  
+social_text:
+  Wechat: qbw994702889
+  QQ: 994702889
 
 # Social Links Icons
 # Icon Mapping:
@@ -229,6 +240,8 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  Wechat: weixin
+  QQ: qq 
 
 
 # Sidebar Avatar
