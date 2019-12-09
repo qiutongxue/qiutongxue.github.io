@@ -99,17 +99,18 @@
               {% assign link = name_link[1] %}
               <span class="links-of-author-item">
                 {% if link %}
-                <a href="{{ social_link[name] }}" target="_blank" title="{{ name }}">
+                <a href="{{ site.social_link[name] }}" target="_blank" title="{{ name }}">
                   {% if site.social_icons.enable %}
                     <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
                   {% endif %}
                   {{ name }}
                 </a>
                 {% else %}
+                  <br>
                   {% if site.social_icons.enable %}
                     <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
                   {% endif %}
-                  {{ social_text[name] }}
+                  {{ site.social_text[name] }}
                 {% endif %}
               </span>
             {% endfor %}
