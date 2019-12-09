@@ -380,13 +380,14 @@ mathjax:
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
-han: false
+han: true
 
 # Swiftype Search API Key
 #swiftype_key:
 
 # Baidu Analytics ID
 #baidu_analytics:
+baidu_analytics: 14f04824ed9083b506084e7cd179df1b
 
 # Duoshuo ShortName
 #duoshuo_shortname:
