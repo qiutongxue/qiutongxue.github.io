@@ -4,12 +4,12 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
-subtitle:
-description:
-author: John Doe
+title: 主标题测试
+subtitle: 子标题测试
+description: 描述测试
+author: qiutongxue（作者测试）
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: zh_Hans
 date_format: '%Y-%m-%d'
 
 # URL
