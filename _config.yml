@@ -237,7 +237,7 @@ social_icons:
   enable: true
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
-  GitHub: github
+  Github: github
   Twitter: twitter
   Weibo: weibo
   Wechat: weixin
@@ -544,7 +544,7 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -575,7 +575,7 @@ baidu_push: false
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
 calendar:
-  enable: false
+  enable: true
   calendar_id: <required>
   api_key: <required>
   orderBy: startTime
@@ -599,7 +599,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -641,10 +641,10 @@ pace: false
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-minimal
+pace_theme: pace-theme-mac-osx
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
 three_waves: false
@@ -719,19 +719,19 @@ vendors:
   canvas_nest:
 
   # three
-  three:
+  three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
 
   # three_waves
   # https://github.com/jjandxa/three_waves
-  three_waves:
+  three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/three-waves.min.js
 
   # three_waves
   # https://github.com/jjandxa/canvas_lines
-  canvas_lines:
+  canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_lines.min.js
 
   # three_waves
   # https://github.com/jjandxa/canvas_sphere
-  canvas_sphere:
+  canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@latest/canvas_sphere.min.js
 
   # Internal version: 1.0.0
   # https://github.com/zproo/canvas-ribbon
