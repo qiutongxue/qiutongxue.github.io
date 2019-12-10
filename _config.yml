@@ -6,7 +6,7 @@
 # Site
 title: Berry Qiu的个人博客
 subtitle: 三五知己，谈笑风生
-description: 
+description: 个人简介有什么好写的呢
 author: 邱同学
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -88,9 +88,9 @@ rss:
 
 # Specify the date when the site was setup
 #since: 2015
-
+since: 2019
 # icon between year and author @Footer
-authoricon: heart
+authoricon: cog
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -118,12 +118,12 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
-  #about: /about/
+  categories: /categories/
+  # about: /about/
   archives: /archives/
   tags: /tags/
-  #sitemap: /sitemap.xml
-  #commonweal: /404.html
+  # sitemap: /sitemap.xml
+  # commonweal: /404.html
 
 
 # Enable/Disable menu icons.
@@ -151,10 +151,10 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-
+scheme: Mist
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -199,8 +199,8 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
-    size:
+    family: consolas
+    size: 14
 
 
 
@@ -269,6 +269,7 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
+  # Only for schema Pisces
   position: left
   #position: right
 
@@ -569,7 +570,7 @@ tencent_analytics: 66497925
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -577,7 +578,7 @@ baidu_push: false
 # API Documentation:
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
 calendar:
-  enable: true
+  enable: false
   calendar_id: <required>
   api_key: <required>
   orderBy: startTime
@@ -643,7 +644,7 @@ pace: false
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-mac-osx
+pace_theme: pace-theme-center-simple
 
 # Canvas-nest
 canvas_nest: true
