@@ -97,22 +97,38 @@
             {% for name_link in site.social %}
               {% assign name = name_link[0] %}
               {% assign link = name_link[1] %}
+              {% if site.social_display[name] %}
               <span class="links-of-author-item">
-                {% if link %}
-                <a href="{{ site.social_link[name] }}" target="_blank" title="{{ name }}">
+                <a href="#" data-toggle="modal" data-target="#modal_{{ name }}">
+                  {% if site.social_icons.enable %}
+                  <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
+                  {% endif %}
+                  {{ name }}
+                </a>
+              </span>
+              <div class="modal fade" id="modal_{{ name }}">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">{{ name }}二维码</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="/assets/images/QRcodes/{{ name }}-QRcode.jpg" alt="{{ name }}-QRcode">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <span class="links-of-author-item">
+                <a href="{{ link }}" target="_blank" title="{{ name }}" id="social_{{ name }}">
                   {% if site.social_icons.enable %}
                     <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
                   {% endif %}
                   {{ name }}
                 </a>
-                {% else %}
-                  <br>
-                  {% if site.social_icons.enable %}
-                    <i class="fa fa-fw fa-{{ site.social_icons[name] | default: 'globe' | downcase }}"></i>
-                  {% endif %}
-                  {{ site.social_text[name] }}
-                {% endif %}
               </span>
+              {% endif %}
             {% endfor %}
           {% endif %}
         </div>

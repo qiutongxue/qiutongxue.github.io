@@ -216,17 +216,16 @@ font:
 #social:
   #LinkLabel: Link
 social:
-  Github: true
-  Weibo: true
-  Wechat: false
-  QQ: false
-social_link:
   Github: https://github.com/qiutongxue
   Weibo: https://weibo.com/u/5899574062
-  
-social_text:
-  Wechat: qbw994702889
-  QQ: 994702889
+  Wechat: #
+  QQ: #
+
+social_display:
+  QQ: true
+  Wechat: true
+  Weibo: false
+  Github: false
 
 # Social Links Icons
 # Icon Mapping:
