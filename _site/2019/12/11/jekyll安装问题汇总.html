@@ -1,0 +1,29 @@
+<!--more-->
+<h3 id="1-使用jekyll-serve时报错">1. 使用<code class="highlighter-rouge">jekyll serve</code>时报错</h3>
+
+<p>报错：could not find xxx in any resource</p>
+
+<p>原因：缺少包，使用<code class="highlighter-rouge">gem install [包名]:[版本号]</code>下载相应版本。</p>
+
+<p>但是更有可能是因为下载下来的模板中有Gemfile.lock，把版本锁住了，将Gemfile.lock删去，命令台调用<code class="highlighter-rouge">bundle install</code>命令安装包即可。</p>
+
+<h3 id="2-本地服务器预览时404问题">2. 本地服务器预览时404问题</h3>
+
+<p>此问题是由于中文问题导致的，解决方法就是强制编码成<code class="highlighter-rouge">UTF-8</code>。</p>
+
+<p>步骤：</p>
+
+<ol>
+  <li>找到自己Ruby的安装路径，找到<code class="highlighter-rouge">\Ruby26-x64\lib\ruby\2.6.0\webrick\httpservlet</code>文件夹下的<code class="highlighter-rouge">filehandler.rb</code>，找到下面两处：
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">path</span> <span class="o">=</span> <span class="n">req</span><span class="p">.</span><span class="nf">path_info</span><span class="p">.</span><span class="nf">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="no">Encoding</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s2">"filesystem"</span><span class="p">))</span>
+ <span class="n">path</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"UTF-8"</span><span class="p">)</span> <span class="c1"># 在此处添加此行代码</span>
+ <span class="k">if</span> <span class="n">trailing_pathsep?</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="nf">path_info</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">break</span> <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s2">"/"</span>
+ <span class="n">base</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"UTF-8"</span><span class="p">)</span> <span class="c1"># 在此处添加此行代码</span>
+ <span class="k">break</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="nf">filename</span> <span class="o">+</span> <span class="n">base</span><span class="p">))</span>
+</code></pre></div>    </div>
+    <p>再重启服务器就ok</p>
+  </li>
+</ol>
+

@@ -1,3 +1,18 @@
 ---
-layout: index
+layout: default
+title: your awesome title
+page-title: 欢迎来到BerryQiu的妙妙屋
+home-title: 这里有很多有意思的东西等着你去发现
+description: 祝你玩的愉快~
 ---
+
+{% include header.html %}
+{% include boot.html %}
+<main>
+    {% include title.html %}
+    <ul class="post-list">
+      {% include posts_paginator.html %}
+    </ul>
+</main>
+{% include pageNav.html %}
+{% include footer.html %}

@@ -1,0 +1,366 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="your web description" />
+<meta name="keywords" content="your web keywords, another keywords" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="//at.alicdn.com/t/font_1563017_g1zlhj4y9b.js"></script>
+<!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpg" rel="shortcut icon" />
+<link href="/assets/profile.jpg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>搭建博客的心路历程</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?14f04824ed9083b506084e7cd179df1b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" #9A85FF ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:#9A85FF;">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">QiuBerry的妙妙屋</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">首页</a></li>
+              
+                <li><a href="/tags.html" style="color: white;">标签</a></li>
+              
+                <li><a href="/timeline.html" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about.html" style="color: white;">关于博主</a></li>
+              
+                <li><a href="/friendLink.html" style="color: white;">友情链接</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>首页</li></a>
+        
+          <a href="/tags.html"><li>标签</li></a>
+        
+          <a href="/timeline.html"><li>时间线</li></a>
+        
+          <a href="/about.html"><li>关于博主</li></a>
+        
+          <a href="/friendLink.html"><li>友情链接</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">搭建博客的心路历程</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s">自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s">自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。</span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:#9A85FF;">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="/2019/12/14/new-post.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#9A85FF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#9A85FF;"><sapn class="main">testesttest</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">搭建博客的心路历程</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s">自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s">自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。</span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#9A85FF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#9A85FF;"><sapn class="main">jekyll问题汇总</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="/2019/12/14/new-post.html" class="leftchange" style="border-right: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>上一篇<br><br>testesttest</span></a>
+    
+    
+      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="rightchange" style="border-left: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>下一篇<br><br>jekyll问题汇总</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+
+  <!-- 文章内容 -->
+  <!--more-->
+<h2 id="一切的源头">一切的源头</h2>
+
+<p>博客一词随着互联网的兴起，发展了十几年了，昨天和舍友提到这词，他还觉得是个古董词汇，当然，如果提起微博，那肯定就不是这回事了。</p>
+
+<p>我最早接触到的博客类应用应该就是QQ空间里的QQ日志了，这也大概是我们这一代大多数人首次使用的博客。回去翻了翻自己几年前写的日志，有漫画转载、有视频图解、还有赛尔号Boss攻略……2011年简直是空间的巅峰啊。</p>
+
+<p><img src="/assets/images/blogImages/QQ图片20191211212901.png" alt="那年的qq空间" /></p>
+
+<p>之前在CSDN也写过几篇博客，但是在文本编辑器里面打打字就能发布，不够酷炫。恰好朋友小w在github做了他自己的个人博客，让我打开了新世界的大门。</p>
+
+<h2 id="github-page的搭建过程">Github Page的搭建过程</h2>
+
+<p>这一点跟着官网做就好了<a href="https://pages.github.com/">https://pages.github.com/</a></p>
+
+<p>这里大致提一下：</p>
+
+<ol>
+  <li>创建仓库的username必须是自己github的username，<strong>不是nickname不是nickname不是nickname</strong></li>
+  <li>推荐使用Github Desktop，免去敲代码clone、fetch、pull的过程，当然git的相关指令还是要学一学。</li>
+  <li>创建完仓库其实就已经完事了，敲个index.html传到github上就能在username.github.io中显示出来了。
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+ <span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;p&gt;</span>I'm hosted with GitHub Pages.<span class="nt">&lt;/p&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="由jekyll产生的漫漫黑苹果路">由Jekyll产生的漫漫黑苹果路</h2>
+
+<p>建完主页了肯定很开心呀，不过<a href="https://pages.github.com/">Github Page</a>还没看完呢，后面会不会给一些主页的模板呢？诶，往下拉~</p>
+
+<p><img src="/assets/images/blogImages/批注&#32;2019-12-11&#32;224356.png" alt="github page中jekyll 的介绍页面" /></p>
+
+<p>好像就是这个，看介绍说用Markdown就能写出好看的博客呢，冲冲冲！这里提供<a href="https://jekyllcn.com">中文版的jekyll</a></p>
+
+<p>兴致勃勃地点进去人就傻了，怎么Linux，MacOS都可以，到Windows这就拉了胯了呢？因为官方不推荐使用Windows，让我产生了深深的执念——Linux还是MacOS，这系统必须安排上！</p>
+
+<p>由于之前尝过Linux的鲜，再加上到现在都没用过MacOS，我决定给虚拟机装个MacOS出来（自此开始就跑偏了）。</p>
+
+<p>由于篇幅有限，黑苹果的安装过程我就放到<a href="#">这里</a>，还是踩了不少坑的，最终虽然顺利安装上了，但是还是有些小bug，加上Xcode七个G的大小，<strong>因为垃圾校园网被迫使用流量上网</strong>的我真的冲不动了。只好用回Windows，嗯，真香~</p>
+
+<h2 id="jekyll环境搭建">Jekyll环境搭建</h2>
+
+<h3 id="rubydevkit">Ruby+Devkit</h3>
+
+<p>好了回归正题，安装Jekyll之前要先安装Ruby，RubyInstaller的连接就在<a href="https://rubyinstaller.org/downloads/">这里</a>，选带Devkit的</p>
+
+<p>安装过程就不多说了，中间有个<code class="highlighter-rouge">Add Ruby executables to your PATH</code>，把它选上。</p>
+
+<p><img src="/assets/images/blogImages/2019-12-13-001534.png" alt="Ruby安装界面" /></p>
+
+<p>安装完成的最后那个安装devkit的选项不要勾，因为是从外网下载，速度慢得感人，可以
+查找Ruby安装目录下的 <code class="highlighter-rouge">msys64\etc\pacman.d</code>，编辑更新源：</p>
+
+<ul>
+  <li>打开mirrorlist.mingw32，在Server的首位加上一行</li>
+</ul>
+
+<pre><code class="language-mingw32">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686 
+</code></pre>
+
+<ul>
+  <li>打开mirrorlist.mingw64，在Server的首位加上一行</li>
+</ul>
+
+<pre><code class="language-mingw64">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64 
+</code></pre>
+
+<ul>
+  <li>打开mirrorlist.msys，在Server的首位加上一行</li>
+</ul>
+
+<pre><code class="language-msys">Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch
+</code></pre>
+
+<p>保存完毕，命令行执行</p>
+
+<pre><code class="language-win32">ridk install
+</code></pre>
+
+<p>就能飞速下载啦</p>
+
+<h3 id="rubygems">RubyGems</h3>
+
+<p>Ruby安装完成后，就能安装RubyGems了，官网下载地址在<a href="https://rubygems.org/pages/download">这里</a>，选zip压缩包。</p>
+
+<p>解压之后，用命令台cd到解压目录下，输入</p>
+
+<pre><code class="language-win32">ruby setup.rb
+</code></pre>
+
+<p>等待安装结束后，就能用gem随便下载各种包了</p>
+
+<h3 id="安装jekyll">安装Jekyll</h3>
+
+<p>有了gem之后，先不着急安装jekyll，和安装ridk一样，配置国内的镜像源能省去不少时间，而gem的配置相对要轻松简单很多，只需在命令台输入</p>
+
+<pre><code class="language-win32">gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+</code></pre>
+
+<p>将国内镜像添加进去后，就能愉快地安装jekyll了</p>
+
+<pre><code class="language-win32">gem install jekyll
+</code></pre>
+
+<p>耐心等待控制台下载安装各种包之后，jekyll的环境搭建就告一段落了</p>
+
+<h2 id="模板怎么用">模板怎么用？</h2>
+
+<p>jekyll安装完毕之后，就能在<a href="http://jekyllthemes.org/">这里</a>下载模板了，将下载下来的模板解压后，放到自己本地的仓库<code class="highlighter-rouge">username.github.io</code>中（在<a href="#Github Page的搭建过程">Github Page的搭建过程</a>中）。</p>
+
+<p>在文件夹下<kbd>shift</kbd> + 鼠标右键，打开命令台窗口，输入<code class="highlighter-rouge">bundle exec jekyll serve</code>启动服务器，等启动完成后，就能看到服务器地址（默认为<code class="highlighter-rouge">127.0.0.1:4000</code>，也可以输<code class="highlighter-rouge">localhost:4000</code>。 其中遇到的相关问题看<a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html">这里</a>。</p>
+
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'twitter'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>your awesome title ©
+  
+  
+  2019
+  <br>
+  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | Specially Thanks to <a href="https://github.com/xukimseven/HardCandy-Jekyll">HardCandy-Jekyll</a></span>
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
