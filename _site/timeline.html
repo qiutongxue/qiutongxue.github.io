@@ -6,15 +6,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="description" content="your web description" />
-<meta name="keywords" content="your web keywords, another keywords" />
+<meta name="description" content="这里是BerryQiu的妙妙屋" />
+<meta name="keywords" content="blog, cs" />
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/media.css">
 <link rel="stylesheet" href="/assets/css/animate.min.css">
-<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_friendly.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- jquery-ui -->
+<link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+<script src="/assets/js/jquery-3.4.1.js"></script>
+<script src="/assets/js/jquery-ui.min.js"></script>
 <!-- SNS-icon -->
-<script src="//at.alicdn.com/t/font_1563017_g1zlhj4y9b.js"></script>
+<script src="//at.alicdn.com/t/font_1563017_jhvhyskvxs.js"></script>
 <!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
 <!-- share.css -->
 <link rel="stylesheet" href="/assets/css/share.min.css">
@@ -92,10 +96,15 @@ var _hmt = _hmt || [];
 
 <main>
     <div class="wow fadeIn top" data-wow-duration="3.5s" >
-    <span class="wow fadeInUp" data-wow-delay="0.2s">timeLine</span>
-    <span class="wow fadeInUp" data-wow-delay="0.4s">Sort by timeline.</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">TimeLine</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s" id="page-counter">共计 %d 篇文章~</span>
     <span class="wow fadeInUp" data-wow-delay="0.6s"></span>
 </div>
+<!-- 替换 %d 中的数字 -->
+<script>
+    var counter = document.getElementById("page-counter");
+    counter.innerText = counter.innerText.replace("%d", "6");
+</script>
 
     <ul class="ex-list">
         <li  class="fadeInUp animated" id="pc">
@@ -112,7 +121,7 @@ var _hmt = _hmt || [];
                 <span class="lefttime-san"></span>
                 <span class="lefttime-main">
                   <sapn class="timemain">
-                    testesttest
+                    TEST PAGE
                   </sapn>
                 </span>
               </a>
@@ -214,7 +223,7 @@ var _hmt = _hmt || [];
           
             <div class="timeANDname">
               <a href="/2019/12/14/new-post.html"><span class="timeANDname-san"></span><span class="timeANDname-main"><sapn class="timeANDnamemain">
-                  testesttest
+                  TEST PAGE
                   <time class="timeline-data" datetime="19-12-14">2019-12-14</time>
               </sapn></span></a>
             </div>
@@ -259,7 +268,7 @@ var _hmt = _hmt || [];
 </main>
 <footer id="bottom">
   <br>
-  <span>your awesome title ©
+  <span>BerryQiu的妙妙屋 ©
   
   
   2019

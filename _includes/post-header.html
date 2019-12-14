@@ -1,4 +1,5 @@
-{% if page.color.size==0 or page.color==nil %}
+
+<!-- 
 <header id="post-header" style="background-color:#9A85FF;">
   <div class="top-center">
       <div class="logo">
@@ -18,8 +19,8 @@
   </div>
 
 </header>
-{% else %}
-<header id="post-header" style="background-color:{{ page.color }};">
+-->
+<header id="post-header" style="background-color:{{ page-color }};">
   <div class="top-center">
       <div class="logo">
           <a href="{{ "/" | relative_url }}" title="my awesome webtitle" style="color: white;">{{ site.webtitle }}</a>
@@ -38,4 +39,4 @@
   </div>
 
 </header>
-{% endif %}
+

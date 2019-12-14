@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: 'your awesome title'
-description: 'your web description'
-keywords: 'your web keywords, another keywords'
-url: 'https://abc.github.io' # your host
+title: 'BerryQiu的妙妙屋'
+description: '这里是BerryQiu的妙妙屋'
+keywords: 'blog, cs'
+url: 'https://qiutongxue.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
@@ -13,7 +13,7 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
   友情链接: '/friendLink.html'
 
 # 博主
-author: true
+author: Berry Qiu
 # name: 'your awesome name'
 name: 'Berry Qiu'
 # NickName: 'your awesome nickname'
@@ -21,34 +21,38 @@ NickName: '萌德LR'
 # webtitle: 'your awesome webtitle'
 webtitle: 'QiuBerry的妙妙屋'
 # bio: 'your awesome bio' # 个人经历
-bio: '来自福建厦门，四川大学机械设计制造及其自动化专业本科在读'
+bio: '三五知己，谈笑风生'
 about: true
 # aboutyou: 'your introduction'
-aboutyou: '三五知己，谈笑风生'
+aboutyou: '大家好，欢迎来到我的个人博客，可以通过下方的渠道和我交流~'
 portraits: '/assets/profile.jpg' # your portraits image file path
 
 # SNS
 SNS: true
 # SNS图标地址（iconfont阿里图标）
-SNS-source: '//at.alicdn.com/t/font_1563017_g1zlhj4y9b.js'
+SNS-source: '//at.alicdn.com/t/font_1563017_jhvhyskvxs.js'
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github','Twitter', 'instagram', 'weixin', 'codepen', 'bilibili', 'bilitv','neteaseCloudMusic']
   mail: ''
-  weixin: '' # 你的微信二维码存放的地址
-  qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  weixin: '###' # 你的微信二维码存放的地址
+  qq: '###' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: ''
   bilibili: ''
-  #bilitv: '' #小电视形态
+  # bilitv: '' #小电视形态
   weibo: ''
-  instagram: ''
+  # instagram: ''
   Twitter: ''
   Facebook: ''
-  google: ''
+  # google: ''
   neteaseCloudMusic: ''
   zhihu: ''
-  linkedin: ''
-  lofter: ''
-  codepen: ''
+  steam: ''
+  # linkedin: ''
+  # lofter: ''
+  # codepen: ''
 
+SNS-qrcode:
+  weixin: true
+  qq: true
 # 分页
 paginate: 5
 paginatepath: ['page:num']
@@ -64,11 +68,12 @@ kramdown:
 # 代码高亮 使用rouge
 highlighter: rouge
 # 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
-pygmentsTheme: 'default'
+pygmentsTheme: 'friendly'
 
 # 友情链接
 friends:
   jekyll: 'https://www.jekyll.com.cn/'
+  犊马不识途: 'http://dumabushitu.github.io'
 
 # 评论 最佳体验 在disqus、livere和Gitment之间三选一
 # disqus 评论

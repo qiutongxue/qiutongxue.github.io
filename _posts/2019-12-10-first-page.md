@@ -1,9 +1,11 @@
 ---
+layout: post
 title: Hello Everyone, Welcome to my BLOGGGGGGGGG~
 categories: 杂文
 tags: 
     - 置顶
     - 博客开通啦
+subtitle: 刚开通博客，还是有很多想法的~
 ---
 
 > 如果要给美好的人生一个定义，那就是惬意，如果要给惬意一个定义，那就是三五知己，谈笑风生。 ————刘瑜《送你一颗子弹》

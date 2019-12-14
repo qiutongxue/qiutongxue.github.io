@@ -1,15 +1,16 @@
 ---
 layout: default
 title: 时间线
-page-title: timeLine
-home-title: Sort by timeline.
-description:
+page-title: TimeLine
+home-title: 共计 %d 篇文章~
+description: 
 ---
 
 {% include header.html %}
 {% include boot.html %}
 <main>
-    {% include title.html %}
+    {% include timeline-title.html %}
+
     <ul class="ex-list">
         <li  class="fadeInUp animated" id="pc">
           {% for post in site.posts %}

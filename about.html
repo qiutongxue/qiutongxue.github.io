@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 关于我
-page-title: AboutMe
+page-title: About Me
 home-title: 这是一个奇怪的人.
 description:
 ---
@@ -22,11 +22,52 @@ description:
         {% endif %}
         {% if site.SNS %}
           {% for sns-icon in site.SNS-icon %}
-            <a href="{{ sns-icon[1] }}" title="{{ sns-icon[0] }}">
+          {% assign iconName = sns-icon[0] %}
+          {% assign link = sns-icon[1] %}
+          <div style="display: inline;">
+            <a href="{{ link }}" title="{{ iconName }}" id="{{ iconName }}-icon" {% if site.SNS-qrcode[iconName] %}showQRcode{% endif %}>
               <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-{{ sns-icon[0] }}"></use>
+                <use xlink:href="#icon-{{ iconName }}"></use>
               </svg>
+              
             </a>
+            {% if site.SNS-qrcode[iconName] %}
+            <div id="{{ iconName }}-QRcode" class="fadeOutUp self-animated QRcode">
+              <img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>
+            </div>
+            <script>
+              $(function() {
+                var {{ iconName }} = $("#{{ iconName }}-icon").tooltip({
+                  disabled: true,
+                  position: {
+                    my: "top",
+                    at: "bottom"
+                  },
+                  classes: {
+                    "ui-dialog": "fadeInUp"
+                  },
+                  show: {
+                    effect: "slideDown",
+                    delay: 100,
+                  },
+                  hide: {
+                    effect: "explode",
+                    delay: 500,
+                    pieces: 4
+                  },
+                  content: '<img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>'
+                });
+                $("#{{ iconName }}-icon").click(function(){
+                  {{ iconName }}.tooltip("enable");
+                  {{ iconName }}.tooltip("open");
+                });
+                $("#{{ iconName }}-icon").mouseout(function() {
+                  {{ iconName }}.tooltip("disable");
+                });
+              });
+            </script>
+            {% endif %}
+          </div>
           {% endfor%}
         {% endif %}
       </li>

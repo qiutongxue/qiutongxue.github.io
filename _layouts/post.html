@@ -7,7 +7,10 @@
 {% include androidColor.html %}
 </head>
 <body>
-
+{%- assign page-color = '#9A85FF' -%}
+{%- if page.color -%}
+  {% assign page-color = page.color %}
+{%- endif -%}
 <!-- 顶部锚点 -->
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
@@ -19,15 +22,21 @@
 <div class="markdown-body fadeInUp animated">
 
   {% if page.subtitle %}
-    {% if page.color.size==0 or page.color==nil %}
+    <!-- 
       <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
         {{ page.subtitle }}
       </div>
-    {% else %}
+    
       <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
         {{ page.subtitle }}
       </div>
-    {% endif %}
+     -->
+
+    <!-- 下面是更改过的 -->
+    <div class="postpage-subtitle" style="border-left: 8px solid {{ page-color }}; border-right: 8px solid {{ page-color }}">
+      {{ page.subtitle }}
+    </div>
+    <!-- 上面是更改过的 -->
   {% endif %}
 
   <!-- 文章内容 -->
