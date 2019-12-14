@@ -761,7 +761,7 @@ a{
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto;
+    margin-top: 15px;
     font-weight: normal;
     color: white;
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
