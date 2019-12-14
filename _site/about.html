@@ -13,10 +13,13 @@
 <link rel="stylesheet" href="/assets/css/animate.min.css">
 <link rel="stylesheet" href="/assets/css/pygments/pygments_friendly.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
-<!-- jquery-ui -->
-<link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+<!-- jquery -->
+<!-- <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"> -->
 <script src="/assets/js/jquery-3.4.1.js"></script>
-<script src="/assets/js/jquery-ui.min.js"></script>
+<!-- <script src="/assets/js/jquery-ui.min.js"></script> -->
+<!-- BootStrap -->
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
 <!-- SNS-icon -->
 <script src="//at.alicdn.com/t/font_1563017_jhvhyskvxs.js"></script>
 <!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
@@ -95,7 +98,7 @@ var _hmt = _hmt || [];
 </div>
 
 <main>
-    <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <div class="wow fadeIn pagetop" data-wow-duration="3.5s" >
     <span class="wow fadeInUp" data-wow-delay="0.2s">About Me</span>
     <span class="wow fadeInUp" data-wow-delay="0.4s">这是一个奇怪的人.</span>
     <span class="wow fadeInUp" data-wow-delay="0.6s"></span>
@@ -115,205 +118,179 @@ var _hmt = _hmt || [];
           
           
           
-          <div style="display: inline;">
-            <a href="" title="mail" id="mail-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-mail"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="mail-icon">
+          <a href="###" title="mail"  showQRcode>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+          </a>
+        </div>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="###" title="weixin" id="weixin-icon" showQRcode>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-weixin"></use>
-              </svg>
-              
-            </a>
             
-            <div id="weixin-QRcode" class="fadeOutUp self-animated QRcode">
-              <img src="/assets/images/qrcodes/weixin-QRcode.jpg" alt="weixin-qrcode" class="QRImg"/>
-            </div>
+            <script>
+            $(function() {
+                $("#mail-icon").popover({
+                  content: function() {
+                    var res = '';
+                    
+                    
+                    
+                    var icon_gmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-gmail"></use></svg>';
+                    var span_gmail = '<span>xqiutongxue@gmail.com</span>';
+                    res += '<div>'+ icon_gmail + span_gmail+'</div>';
+                    
+                    
+                    
+                    var icon_outlook = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-outlook"></use></svg>';
+                    var span_outlook = '<span>qiutongxue@outlook.com</span>';
+                    res += '<div>'+ icon_outlook + span_outlook+'</div>';
+                    
+                    
+                    
+                    var icon_foxmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-foxmail"></use></svg>';
+                    var span_foxmail = '<span>xqiutongxue@foxmail.com</span>';
+                    res += '<div>'+ icon_foxmail + span_foxmail+'</div>';
+                    
+                    return res;
+                  },
+                  html: true,
+                  placement: 'top',
+                  trigger: 'focus',
+                  sanitize: false,
+                });
+              })              
+            </script>
+            
+          
+          
+          
+          <div style="width: 28px; height: 28px; display: inline;" id="weixin-icon">
+          <a href="###" title="weixin"  showQRcode>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weixin"></use>
+            </svg>
+          </a>
+        </div>
+            
             <script>
               $(function() {
-                var weixin = $("#weixin-icon").tooltip({
-                  disabled: true,
-                  position: {
-                    my: "top",
-                    at: "bottom"
-                  },
-                  classes: {
-                    "ui-dialog": "fadeInUp"
-                  },
-                  show: {
-                    effect: "slideDown",
-                    delay: 100,
-                  },
-                  hide: {
-                    effect: "explode",
-                    delay: 500,
-                    pieces: 4
-                  },
+                $("#weixin-icon").popover({
+                  html: true,
+                  placement: 'top',
+                  trigger: 'focus',
                   content: '<img src="/assets/images/qrcodes/weixin-QRcode.jpg" alt="weixin-qrcode" class="QRImg"/>'
-                });
-                $("#weixin-icon").click(function(){
-                  weixin.tooltip("enable");
-                  weixin.tooltip("open");
-                });
-                $("#weixin-icon").mouseout(function() {
-                  weixin.tooltip("disable");
-                });
-              });
+                })
+              })
             </script>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="###" title="qq" id="qq-icon" showQRcode>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-qq"></use>
-              </svg>
-              
-            </a>
             
-            <div id="qq-QRcode" class="fadeOutUp self-animated QRcode">
-              <img src="/assets/images/qrcodes/qq-QRcode.jpg" alt="qq-qrcode" class="QRImg"/>
-            </div>
+          
+          
+          
+          <div style="width: 28px; height: 28px; display: inline;" id="qq-icon">
+          <a href="###" title="qq"  showQRcode>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-qq"></use>
+            </svg>
+          </a>
+        </div>
+            
             <script>
               $(function() {
-                var qq = $("#qq-icon").tooltip({
-                  disabled: true,
-                  position: {
-                    my: "top",
-                    at: "bottom"
-                  },
-                  classes: {
-                    "ui-dialog": "fadeInUp"
-                  },
-                  show: {
-                    effect: "slideDown",
-                    delay: 100,
-                  },
-                  hide: {
-                    effect: "explode",
-                    delay: 500,
-                    pieces: 4
-                  },
+                $("#qq-icon").popover({
+                  html: true,
+                  placement: 'top',
+                  trigger: 'focus',
                   content: '<img src="/assets/images/qrcodes/qq-QRcode.jpg" alt="qq-qrcode" class="QRImg"/>'
-                });
-                $("#qq-icon").click(function(){
-                  qq.tooltip("enable");
-                  qq.tooltip("open");
-                });
-                $("#qq-icon").mouseout(function() {
-                  qq.tooltip("disable");
-                });
-              });
+                })
+              })
             </script>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="" title="github" id="github-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-github"></use>
-              </svg>
-              
-            </a>
             
-          </div>
           
           
           
-          <div style="display: inline;">
-            <a href="" title="bilibili" id="bilibili-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-bilibili"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="github-icon">
+          <a href="https://github.com/qiutongxue" title="github"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>
+        </div>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="" title="weibo" id="weibo-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-weibo"></use>
-              </svg>
-              
-            </a>
             
-          </div>
           
           
           
-          <div style="display: inline;">
-            <a href="" title="Twitter" id="Twitter-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-Twitter"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="bilibili-icon">
+          <a href="https://space.bilibili.com/3995868" title="bilibili"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-bilibili"></use>
+            </svg>
+          </a>
+        </div>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="" title="Facebook" id="Facebook-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-Facebook"></use>
-              </svg>
-              
-            </a>
             
-          </div>
           
           
           
-          <div style="display: inline;">
-            <a href="" title="neteaseCloudMusic" id="neteaseCloudMusic-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-neteaseCloudMusic"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="weibo-icon">
+          <a href="https://weibo.com/u/5899574062" title="weibo"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo"></use>
+            </svg>
+          </a>
+        </div>
             
-          </div>
-          
-          
-          
-          <div style="display: inline;">
-            <a href="" title="zhihu" id="zhihu-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-zhihu"></use>
-              </svg>
-              
-            </a>
             
-          </div>
           
           
           
-          <div style="display: inline;">
-            <a href="" title="steam" id="steam-icon" >
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-steam"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="neteaseCloudMusic-icon">
+          <a href="https://music.163.com/#/user/home?id=269757591" title="neteaseCloudMusic"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-neteaseCloudMusic"></use>
+            </svg>
+          </a>
+        </div>
             
-          </div>
+            
+          
+          
+          
+          <div style="width: 28px; height: 28px; display: inline;" id="zhihu-icon">
+          <a href="https://www.zhihu.com/people/qiu-bo-wei-79/activities" title="zhihu"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-zhihu"></use>
+            </svg>
+          </a>
+        </div>
+            
+            
+          
+          
+          
+          <div style="width: 28px; height: 28px; display: inline;" id="steam-icon">
+          <a href="https://steamcommunity.com/id/994702889/" title="steam"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-steam"></use>
+            </svg>
+          </a>
+        </div>
+            
+            
+          
+          
+          
+          <div style="width: 28px; height: 28px; display: inline;" id="rss-icon">
+          <a href="/feed.xml" title="rss"  target="_blank">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-rss"></use>
+            </svg>
+          </a>
+        </div>
+            
+            
           
         
       </li>

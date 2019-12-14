@@ -24,51 +24,49 @@ description:
           {% for sns-icon in site.SNS-icon %}
           {% assign iconName = sns-icon[0] %}
           {% assign link = sns-icon[1] %}
-          <div style="display: inline;">
-            <a href="{{ link }}" title="{{ iconName }}" id="{{ iconName }}-icon" {% if site.SNS-qrcode[iconName] %}showQRcode{% endif %}>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-{{ iconName }}"></use>
-              </svg>
-              
-            </a>
+          <div style="width: 28px; height: 28px; display: inline;" id="{{ iconName }}-icon">
+          <a href="{{ link }}" title="{{ iconName }}"  {% if site.SNS-qrcode[iconName] or iconName == 'mail' %}showQRcode{% else %}target="_blank"{% endif %}>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-{{ iconName }}"></use>
+            </svg>
+          </a>
+        </div>
             {% if site.SNS-qrcode[iconName] %}
-            <div id="{{ iconName }}-QRcode" class="fadeOutUp self-animated QRcode">
-              <img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>
-            </div>
             <script>
               $(function() {
-                var {{ iconName }} = $("#{{ iconName }}-icon").tooltip({
-                  disabled: true,
-                  position: {
-                    my: "top",
-                    at: "bottom"
-                  },
-                  classes: {
-                    "ui-dialog": "fadeInUp"
-                  },
-                  show: {
-                    effect: "slideDown",
-                    delay: 100,
-                  },
-                  hide: {
-                    effect: "explode",
-                    delay: 500,
-                    pieces: 4
-                  },
+                $("#{{ iconName}}-icon").popover({
+                  html: true,
+                  placement: 'top',
+                  trigger: 'focus',
                   content: '<img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>'
-                });
-                $("#{{ iconName }}-icon").click(function(){
-                  {{ iconName }}.tooltip("enable");
-                  {{ iconName }}.tooltip("open");
-                });
-                $("#{{ iconName }}-icon").mouseout(function() {
-                  {{ iconName }}.tooltip("disable");
-                });
-              });
+                })
+              })
             </script>
             {% endif %}
-          </div>
-          {% endfor%}
+            {% if iconName == 'mail' %}
+            <script>
+            $(function() {
+                $("#mail-icon").popover({
+                  content: function() {
+                    var res = '';
+                    {% for mail in site.social_mail %}
+                    {% assign mailName = mail[0] %}
+                    {% assign mailAddr = mail[1] %}
+                    var icon_{{ mailName }} = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-{{ mailName }}"></use></svg>';
+                    var span_{{ mailName }} = '<span>{{ mailAddr }}</span>';
+                    res += '<div>'+ icon_{{mailName}} + span_{{ mailName }}+'</div>';
+                    {% endfor %}
+                    return res;
+                  },
+                  html: true,
+                  placement: 'top',
+                  trigger: 'focus',
+                  sanitize: false,
+                });
+              })              
+            </script>
+            {% endif %}
+          {% endfor %}
         {% endif %}
       </li>
       <li class="fadeInUp animated">

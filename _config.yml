@@ -31,25 +31,29 @@ portraits: '/assets/profile.jpg' # your portraits image file path
 SNS: true
 # SNS图标地址（iconfont阿里图标）
 SNS-source: '//at.alicdn.com/t/font_1563017_jhvhyskvxs.js'
-SNS-icon: #['Facebook', 'weibo', 'qq', 'github','Twitter', 'instagram', 'weixin', 'codepen', 'bilibili', 'bilitv','neteaseCloudMusic']
-  mail: ''
+SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','neteaseCloudMusic','Facebook','instagram', ]
+  mail: '###'
   weixin: '###' # 你的微信二维码存放的地址
   qq: '###' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
-  github: ''
-  bilibili: ''
+  github: 'https://github.com/qiutongxue'
+  bilibili: 'https://space.bilibili.com/3995868'
   # bilitv: '' #小电视形态
-  weibo: ''
+  weibo: 'https://weibo.com/u/5899574062'
   # instagram: ''
-  Twitter: ''
-  Facebook: ''
+  # Twitter: ''
+  # Facebook: ''
   # google: ''
-  neteaseCloudMusic: ''
-  zhihu: ''
-  steam: ''
+  neteaseCloudMusic: 'https://music.163.com/#/user/home?id=269757591'
+  zhihu: 'https://www.zhihu.com/people/qiu-bo-wei-79/activities'
+  steam: 'https://steamcommunity.com/id/994702889/'
   # linkedin: ''
   # lofter: ''
   # codepen: ''
-
+  rss: '/feed.xml'
+social_mail:
+  gmail: 'xqiutongxue@gmail.com'
+  outlook: 'qiutongxue@outlook.com'
+  foxmail: 'xqiutongxue@foxmail.com'
 SNS-qrcode:
   weixin: true
   qq: true
