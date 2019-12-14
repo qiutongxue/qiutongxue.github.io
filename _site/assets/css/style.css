@@ -559,7 +559,8 @@ a{
   text-align: center;
   background-color: #fafbfc;
   margin: 0 10% 20px 10%;
-  font-size: 20px;
+  font-size: 16px;
+  color: #777;
 }
 .markdown-body:hover{
     -webkit-box-shadow: 0 1px 10px #777;
@@ -727,7 +728,7 @@ a{
     text-align: center;
     position: absolute;
     /* top: 1em; */
-    top: 20%;
+    top: 40%;
     left: 0;
     right: 0;
     margin: auto;
