@@ -110,10 +110,10 @@ a{
     background-repeat: no-repeat;
     background-position: top;
     /* background: blue; */
-    /*border-bottom: 1px solid #e7eaf1;*/
+    border-bottom: 1px solid #e7eaf1;
     position: relative;
-    z-index: -1;
-    background-color: white;
+    /* z-index: -1; */
+    background-color: white; 
 }
 .pagetop svg{
   fill: blue;
