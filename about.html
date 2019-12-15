@@ -50,6 +50,7 @@ description:
     {% for qrcode in site.SNS-qrcode %}
     {% assign iconName = qrcode[0] %}
     $("#{{ iconName}}-icon").popover({
+      title: "扫一扫",
       html: true,
       placement: 'top',
       trigger: 'focus',
@@ -76,14 +77,15 @@ description:
         hide: 100,
       },
       sanitize: false,
+      title: "点击复制邮箱"
     });           
 
-  
     var clip = new ClipboardJS('.mail-element',{
       text: function(trigger) {
         return $(trigger).find("span").text();
       }
     });
+    // 复制成功弹窗
     clip.on('success', function(){
       $(".copy-success").show(function(){
         $(this).removeClass("fadeInUp");
@@ -93,8 +95,10 @@ description:
           $(this).addClass("fadeInUp").removeClass("fadeOutUp");
         })
       },1500);
-  
     });
+
+
+
   });
 </script>
 {% include footer.html %}
