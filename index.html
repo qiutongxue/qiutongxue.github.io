@@ -16,3 +16,22 @@ description: 祝你玩的愉快~
 </main>
 {% include pageNav.html %}
 {% include footer.html %}
+{%- if site.color-bind.index -%}
+<script>
+  $(function() {
+    $(".post-list li").mouseout(function() {
+      $(this).css({
+        "-webkit-box-shadow": "0 1px 3px rgba(0,37,55,.06)",
+        'box-shadow': "0 1px 3px rgba(0,37,55,.06)",
+      })
+    });
+    $(".post-list li").mouseover(function() {
+      var bgcolor = $(this).attr("color");
+      $(this).css({
+        "-webkit-box-shadow": "0 1px 10px "+bgcolor,
+        "box-shadow": "0 1px 10px "+bgcolor
+      })
+    })
+  })
+</script>
+{%- endif -%}

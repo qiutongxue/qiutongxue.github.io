@@ -105,6 +105,11 @@ baidu-url: '14f04824ed9083b506084e7cd179df1b'
 google: false
 google-ID: ''
 
+#开启颜色跟踪（与文章相关的组件与文章背景色绑定）
+color-bind:
+  index: false
+  timeline: true
+  tags: true
 # 颜色库，博客文章的背景颜色根据【index = 字数 modulo 库颜色数量】从中获取相应的颜色，十六进制颜色需要用【双引号】包裹
 page-color: 
   - "#9A85FF"  #紫
