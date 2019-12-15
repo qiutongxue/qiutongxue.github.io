@@ -1,4 +1,4 @@
-<nav class="pagination">
+<!-- <nav class="pagination">
   <div class="page-links">
     {% if paginator.page == 1 %}
         <a href="{{ "/" | relative_url }}" class="page-link" title="Index Page">1</a>
@@ -22,4 +22,14 @@
     {% endif %}
   </div>
 
-</nav>
+</nav> -->
+{% if paginator.previous_page or paginator.next_page %}
+  <nav class="pagination">
+    <div class="page-links">
+      {% assign prev_text = '&laquo;' %}
+      {% assign next_text = '&raquo;' %}
+      {% include _helper/paginator.html %}
+      {{ paginator }}
+    </div>
+  </nav>
+{% endif %}
