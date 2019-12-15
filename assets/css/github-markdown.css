@@ -283,6 +283,7 @@
   background-color: #fafbfc;
   padding: 27px 15px;
   margin: 50px 0 30px;
+  border-radius: 5px;
 }
 .markdown-body h1::after{
   content:"h1";
@@ -305,6 +306,8 @@
   background-color: #fafbfc;
   padding: 22px 15px;
   margin: 35px 0 30px;
+  border-radius: 5px;
+
 }
 .markdown-body h2::after{
   content:"h2";
@@ -327,6 +330,8 @@
   background-color: #fafbfc;
   padding: 17px 15px;
   margin: 30px 0 26px;
+  border-radius: 5px;
+
 }
 .markdown-body h3::after{
   content:"h3";
@@ -348,6 +353,8 @@
   background-color: #fafbfc;
   padding: 15px 15px;
   margin: 30px 0 26px;
+  border-radius: 5px;
+
 }
 .markdown-body h4::after{
   content:"h4";
