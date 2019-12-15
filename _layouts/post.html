@@ -7,8 +7,14 @@
 {% include androidColor.html %}
 </head>
 <body>
-{%- assign page-color = '#9A85FF' -%}
-{%- if page.color -%}
+<!-- 默认根据文章字数选择颜色，页面中设置的颜色优先 -->
+{% comment %}
+{%- assign number = page.date | date: "%s" | divided_by: 100 | modulo: site.page-color.size -%}
+{% endcomment %}
+{%- assign content-size = page.content | strip_html | strip_newlines | size -%}
+{%- assign color-num = page.content.size | modulo: site.page-color.size -%}
+{%- assign page-color = site.page-color[color-num] -%}
+{%- if page.color.size > 0 -%}
   {% assign page-color = page.color %}
 {%- endif -%}
 <!-- 顶部锚点 -->
@@ -22,21 +28,9 @@
 <div class="markdown-body fadeInUp animated">
 
   {% if page.subtitle %}
-    <!-- 
-      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
-        {{ page.subtitle }}
-      </div>
-    
-      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
-        {{ page.subtitle }}
-      </div>
-     -->
-
-    <!-- 下面是更改过的 -->
     <div class="postpage-subtitle" style="border-left: 8px solid {{ page-color }}; border-right: 8px solid {{ page-color }}">
       {{ page.subtitle }}
     </div>
-    <!-- 上面是更改过的 -->
   {% endif %}
 
   <!-- 文章内容 -->

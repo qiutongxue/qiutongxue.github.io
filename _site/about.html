@@ -13,18 +13,23 @@
 <link rel="stylesheet" href="/assets/css/animate.min.css">
 <link rel="stylesheet" href="/assets/css/pygments/pygments_friendly.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
+
 <!-- jquery -->
-<!-- <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"> -->
 <script src="/assets/js/jquery-3.4.1.js"></script>
-<!-- <script src="/assets/js/jquery-ui.min.js"></script> -->
+
+<!-- clipboard剪切板 -->
+<script src="/assets/js/clipboard.min.js"></script>
+
 <!-- BootStrap -->
 <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
 <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+
 <!-- SNS-icon -->
-<script src="//at.alicdn.com/t/font_1563017_jhvhyskvxs.js"></script>
-<!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
+<script src="//at.alicdn.com/t/font_1563017_c9npfhfwibm.js"></script>
+
 <!-- share.css -->
 <link rel="stylesheet" href="/assets/css/share.min.css">
+
 <!-- font -->
 <link rel="stylesheet" href="/assets/css/font.css">
 <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
@@ -98,6 +103,7 @@ var _hmt = _hmt || [];
 </div>
 
 <main>
+    <div class="copy-success fadeInUp animated"><span class="copy-success-text">邮箱已复制到剪切板中~</span></div>
     <div class="wow fadeIn page-top" data-wow-duration="3.5s" >
     <span class="wow fadeInUp" data-wow-delay="0.2s">About Me</span>
     <span class="wow fadeInUp" data-wow-delay="0.4s">这是一个奇怪的人.</span>
@@ -125,42 +131,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
-            <script>
-            $(function() {
-                $("#mail-icon").popover({
-                  content: function() {
-                    var res = '';
-                    
-                    
-                    
-                    var icon_gmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-gmail"></use></svg>';
-                    var span_gmail = '<span>xqiutongxue@gmail.com</span>';
-                    res += '<div>'+ icon_gmail + span_gmail+'</div>';
-                    
-                    
-                    
-                    var icon_outlook = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-outlook"></use></svg>';
-                    var span_outlook = '<span>qiutongxue@outlook.com</span>';
-                    res += '<div>'+ icon_outlook + span_outlook+'</div>';
-                    
-                    
-                    
-                    var icon_foxmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-foxmail"></use></svg>';
-                    var span_foxmail = '<span>xqiutongxue@foxmail.com</span>';
-                    res += '<div>'+ icon_foxmail + span_foxmail+'</div>';
-                    
-                    return res;
-                  },
-                  html: true,
-                  placement: 'top',
-                  trigger: 'focus',
-                  sanitize: false,
-                });
-              })              
-            </script>
-            
           
           
           
@@ -171,19 +141,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            <script>
-              $(function() {
-                $("#weixin-icon").popover({
-                  html: true,
-                  placement: 'top',
-                  trigger: 'focus',
-                  content: '<img src="/assets/images/qrcodes/weixin-QRcode.jpg" alt="weixin-qrcode" class="QRImg"/>'
-                })
-              })
-            </script>
-            
-            
           
           
           
@@ -194,19 +151,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            <script>
-              $(function() {
-                $("#qq-icon").popover({
-                  html: true,
-                  placement: 'top',
-                  trigger: 'focus',
-                  content: '<img src="/assets/images/qrcodes/qq-QRcode.jpg" alt="qq-qrcode" class="QRImg"/>'
-                })
-              })
-            </script>
-            
-            
           
           
           
@@ -217,8 +161,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
@@ -229,8 +171,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
@@ -241,8 +181,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
@@ -253,8 +191,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
@@ -265,8 +201,6 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
@@ -277,20 +211,16 @@ var _hmt = _hmt || [];
             </svg>
           </a>
         </div>
-            
-            
           
           
           
-          <div style="width: 28px; height: 28px; display: inline;" id="rss-icon">
-          <a href="/feed.xml" title="rss"  target="_blank">
+          <div style="width: 28px; height: 28px; display: inline;" id="RSS-icon">
+          <a href="/feed.xml" title="RSS"  target="_blank">
             <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-rss"></use>
+              <use xlink:href="#icon-RSS"></use>
             </svg>
           </a>
         </div>
-            
-            
           
         
       </li>
@@ -319,6 +249,79 @@ var _hmt = _hmt || [];
       </li>
     </ul>
 </main>
+
+<script>
+  $(function() {
+    
+    
+    $("#weixin-icon").popover({
+      html: true,
+      placement: 'top',
+      trigger: 'focus',
+      content: '<img src="/assets/images/qrcodes/weixin-QRcode.jpg" alt="weixin-qrcode" class="QRImg"/>'
+    })
+    
+    
+    $("#qq-icon").popover({
+      html: true,
+      placement: 'top',
+      trigger: 'focus',
+      content: '<img src="/assets/images/qrcodes/qq-QRcode.jpg" alt="qq-qrcode" class="QRImg"/>'
+    })
+    
+    $("#mail-icon").popover({
+      content: function() {
+        var res = '';
+        
+        
+        
+        var icon_gmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-gmail"></use></svg>';
+        var span_gmail = '<span class="mail-text">xqiutongxue@gmail.com</span>';
+        res += '<div class="mail-div"><a class="mail-element" href="###">'+ icon_gmail + span_gmail+'</a></div>';
+        
+        
+        
+        var icon_outlook = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-outlook"></use></svg>';
+        var span_outlook = '<span class="mail-text">qiutongxue@outlook.com</span>';
+        res += '<div class="mail-div"><a class="mail-element" href="###">'+ icon_outlook + span_outlook+'</a></div>';
+        
+        
+        
+        var icon_foxmail = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-foxmail"></use></svg>';
+        var span_foxmail = '<span class="mail-text">xqiutongxue@foxmail.com</span>';
+        res += '<div class="mail-div"><a class="mail-element" href="###">'+ icon_foxmail + span_foxmail+'</a></div>';
+        
+        return res;
+      },
+      html: true,
+      placement: 'top',
+      trigger: 'focus',
+      delay: {
+        show: 100,
+        hide: 100,
+      },
+      sanitize: false,
+    });           
+
+  
+    var clip = new ClipboardJS('.mail-element',{
+      text: function(trigger) {
+        return $(trigger).find("span").text();
+      }
+    });
+    clip.on('success', function(){
+      $(".copy-success").show(function(){
+        $(this).removeClass("fadeInUp");
+      });
+      setTimeout(function() {
+        $(".copy-success").addClass("fadeOutUp").hide(function(){
+          $(this).addClass("fadeInUp").removeClass("fadeOutUp");
+        })
+      },1500);
+  
+    });
+  });
+</script>
 <footer id="bottom">
   <br>
   <span>BerryQiu的妙妙屋 ©

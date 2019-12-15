@@ -276,7 +276,8 @@
 .markdown-body h1 {
   position: relative;
   font-size: 30px;
-  font-weight: 600;
+  /* font-weight: 600; */
+  font-weight: bold;
   /*text-align: center;*/
   border-left: 8px solid #9A85FF;
   background-color: #fafbfc;

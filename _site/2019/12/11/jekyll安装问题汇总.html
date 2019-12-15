@@ -13,18 +13,23 @@
 <link rel="stylesheet" href="/assets/css/animate.min.css">
 <link rel="stylesheet" href="/assets/css/pygments/pygments_friendly.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
+
 <!-- jquery -->
-<!-- <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"> -->
 <script src="/assets/js/jquery-3.4.1.js"></script>
-<!-- <script src="/assets/js/jquery-ui.min.js"></script> -->
+
+<!-- clipboard剪切板 -->
+<script src="/assets/js/clipboard.min.js"></script>
+
 <!-- BootStrap -->
 <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
 <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+
 <!-- SNS-icon -->
-<script src="//at.alicdn.com/t/font_1563017_jhvhyskvxs.js"></script>
-<!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
+<script src="//at.alicdn.com/t/font_1563017_c9npfhfwibm.js"></script>
+
 <!-- share.css -->
 <link rel="stylesheet" href="/assets/css/share.min.css">
+
 <!-- font -->
 <link rel="stylesheet" href="/assets/css/font.css">
 <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
@@ -53,7 +58,9 @@ var _hmt = _hmt || [];
 <!-- Android Lolipop Theme Color -->
 <meta name="theme-color" content=" #9A85FF ">
 </head>
-<body><!-- 顶部锚点 -->
+<body>
+<!-- 默认根据文章字数选择颜色，页面中设置的颜色优先 -->
+<!-- 顶部锚点 -->
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
 
@@ -86,7 +93,7 @@ var _hmt = _hmt || [];
 
 </header>
 -->
-<header id="post-header" style="background-color:#9A85FF;">
+<header id="post-header" style="background-color:#9A9A9A;">
   <div class="top-center">
       <div class="logo">
           <a href="/" title="my awesome webtitle" style="color: white;">QiuBerry的妙妙屋</a>
@@ -178,12 +185,12 @@ var _hmt = _hmt || [];
   </div>
 </div> -->
 
-<div class="post-top" style="background-color:#9A85FF;">
+<div class="post-top" style="background-color:#9A9A9A;">
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="/2019/12/11/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8%E6%B3%AA.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#9A85FF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#9A85FF;"><sapn class="main">搭建博客的心路历程</sapn></span></div>
+      <a href="/2019/12/11/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8%E6%B3%AA.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#9A9A9A';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#9A9A9A;"><sapn class="main">搭建博客的心路历程</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
@@ -193,18 +200,18 @@ var _hmt = _hmt || [];
   </div>
   <div class="right-area">
     
-      <a href="/%E6%9D%82%E6%96%87/2019/12/10/first-page.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#9A85FF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
-      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#9A85FF;"><sapn class="main">Hello Everyone, Welcome to my BLOGGGGGGGGG~</sapn></span></div>
+      <a href="/%E6%9D%82%E6%96%87/2019/12/10/first-page.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#9A9A9A';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#9A9A9A;"><sapn class="main">Hello Everyone, Welcome to my BLOGGGGGGGGG~</sapn></span></div>
     
   </div>
 
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="/2019/12/11/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8%E6%B3%AA.html" class="leftchange" style="border-right: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>上一篇<br><br>搭建博客的心路历程</span></a>
+      <a href="/2019/12/11/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BF%83%E9%85%B8%E6%B3%AA.html" class="leftchange" style="border-right: 1px solid #9A9A9A;border-bottom: 2px solid #9A9A9A;"><span>上一篇<br><br>搭建博客的心路历程</span></a>
     
     
-      <a href="/%E6%9D%82%E6%96%87/2019/12/10/first-page.html" class="rightchange" style="border-left: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>下一篇<br><br>Hello Everyone, Welcome to my BLOGGGGGGGGG~</span></a>
+      <a href="/%E6%9D%82%E6%96%87/2019/12/10/first-page.html" class="rightchange" style="border-left: 1px solid #9A9A9A;border-bottom: 2px solid #9A9A9A;"><span>下一篇<br><br>Hello Everyone, Welcome to my BLOGGGGGGGGG~</span></a>
     
   </div>
 </div>
@@ -214,21 +221,9 @@ var _hmt = _hmt || [];
 <div class="markdown-body fadeInUp animated">
 
   
-    <!-- 
-      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
-        这些都是我在安装与使用jekyll时踩过的坑，Windows用户留下了不屈的泪水。
-      </div>
-    
-      <div class="postpage-subtitle" style="border-left: 8px solid ; border-right: 8px solid ">
-        这些都是我在安装与使用jekyll时踩过的坑，Windows用户留下了不屈的泪水。
-      </div>
-     -->
-
-    <!-- 下面是更改过的 -->
-    <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF">
+    <div class="postpage-subtitle" style="border-left: 8px solid #9A9A9A; border-right: 8px solid #9A9A9A">
       这些都是我在安装与使用jekyll时踩过的坑，Windows用户留下了不屈的泪水。
     </div>
-    <!-- 上面是更改过的 -->
   
 
   <!-- 文章内容 -->

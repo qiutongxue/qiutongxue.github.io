@@ -9,6 +9,7 @@ description:
 {% include header.html %}
 {% include boot.html %}
 <main>
+    <div class="copy-success fadeInUp animated"><span class="copy-success-text">邮箱已复制到剪切板中~</span></div>
     {% include title.html %}
     <ul class="ex-list">
         <li class="fadeInUp animated">
@@ -31,41 +32,6 @@ description:
             </svg>
           </a>
         </div>
-            {% if site.SNS-qrcode[iconName] %}
-            <script>
-              $(function() {
-                $("#{{ iconName}}-icon").popover({
-                  html: true,
-                  placement: 'top',
-                  trigger: 'focus',
-                  content: '<img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>'
-                })
-              })
-            </script>
-            {% endif %}
-            {% if iconName == 'mail' %}
-            <script>
-            $(function() {
-                $("#mail-icon").popover({
-                  content: function() {
-                    var res = '';
-                    {% for mail in site.social_mail %}
-                    {% assign mailName = mail[0] %}
-                    {% assign mailAddr = mail[1] %}
-                    var icon_{{ mailName }} = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-{{ mailName }}"></use></svg>';
-                    var span_{{ mailName }} = '<span>{{ mailAddr }}</span>';
-                    res += '<div>'+ icon_{{mailName}} + span_{{ mailName }}+'</div>';
-                    {% endfor %}
-                    return res;
-                  },
-                  html: true,
-                  placement: 'top',
-                  trigger: 'focus',
-                  sanitize: false,
-                });
-              })              
-            </script>
-            {% endif %}
           {% endfor %}
         {% endif %}
       </li>
@@ -78,4 +44,57 @@ description:
       </li>
     </ul>
 </main>
+
+<script>
+  $(function() {
+    {% for qrcode in site.SNS-qrcode %}
+    {% assign iconName = qrcode[0] %}
+    $("#{{ iconName}}-icon").popover({
+      html: true,
+      placement: 'top',
+      trigger: 'focus',
+      content: '<img src="/assets/images/qrcodes/{{ iconName }}-QRcode.jpg" alt="{{ iconName }}-qrcode" class="QRImg"/>'
+    })
+    {% endfor %}
+    $("#mail-icon").popover({
+      content: function() {
+        var res = '';
+        {% for mail in site.social_mail %}
+        {% assign mailName = mail[0] %}
+        {% assign mailAddr = mail[1] %}
+        var icon_{{ mailName }} = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-{{ mailName }}"></use></svg>';
+        var span_{{ mailName }} = '<span class="mail-text">{{ mailAddr }}</span>';
+        res += '<div class="mail-div"><a class="mail-element" href="###">'+ icon_{{mailName}} + span_{{ mailName }}+'</a></div>';
+        {% endfor %}
+        return res;
+      },
+      html: true,
+      placement: 'top',
+      trigger: 'focus',
+      delay: {
+        show: 100,
+        hide: 100,
+      },
+      sanitize: false,
+    });           
+
+  
+    var clip = new ClipboardJS('.mail-element',{
+      text: function(trigger) {
+        return $(trigger).find("span").text();
+      }
+    });
+    clip.on('success', function(){
+      $(".copy-success").show(function(){
+        $(this).removeClass("fadeInUp");
+      });
+      setTimeout(function() {
+        $(".copy-success").addClass("fadeOutUp").hide(function(){
+          $(this).addClass("fadeInUp").removeClass("fadeOutUp");
+        })
+      },1500);
+  
+    });
+  });
+</script>
 {% include footer.html %}

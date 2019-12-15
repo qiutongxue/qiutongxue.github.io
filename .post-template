@@ -1,10 +1,9 @@
 ---
 layout: post
-title: 
 author: Berry Qiu
-date:    
-tags: 
-color: 
-cover: ''
+title: 
 subtitle: 
+cover: 
+color: '' # 默认根据字数生成相应颜色
+tags: 
 ---

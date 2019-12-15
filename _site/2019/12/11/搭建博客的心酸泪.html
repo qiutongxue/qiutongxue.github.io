@@ -13,18 +13,23 @@
 <link rel="stylesheet" href="/assets/css/animate.min.css">
 <link rel="stylesheet" href="/assets/css/pygments/pygments_friendly.css">
 <link rel="stylesheet" href="/assets/css/github-markdown.css">
+
 <!-- jquery -->
-<!-- <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"> -->
 <script src="/assets/js/jquery-3.4.1.js"></script>
-<!-- <script src="/assets/js/jquery-ui.min.js"></script> -->
+
+<!-- clipboard剪切板 -->
+<script src="/assets/js/clipboard.min.js"></script>
+
 <!-- BootStrap -->
 <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
 <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+
 <!-- SNS-icon -->
-<script src="//at.alicdn.com/t/font_1563017_jhvhyskvxs.js"></script>
-<!-- <script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script> -->
+<script src="//at.alicdn.com/t/font_1563017_c9npfhfwibm.js"></script>
+
 <!-- share.css -->
 <link rel="stylesheet" href="/assets/css/share.min.css">
+
 <!-- font -->
 <link rel="stylesheet" href="/assets/css/font.css">
 <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
@@ -53,7 +58,9 @@ var _hmt = _hmt || [];
 <!-- Android Lolipop Theme Color -->
 <meta name="theme-color" content=" #9A85FF ">
 </head>
-<body><!-- 顶部锚点 -->
+<body>
+<!-- 默认根据文章字数选择颜色，页面中设置的颜色优先 -->
+<!-- 顶部锚点 -->
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
 
@@ -86,7 +93,7 @@ var _hmt = _hmt || [];
 
 </header>
 -->
-<header id="post-header" style="background-color:#9A85FF;">
+<header id="post-header" style="background-color:#00E673;">
   <div class="top-center">
       <div class="logo">
           <a href="/" title="my awesome webtitle" style="color: white;">QiuBerry的妙妙屋</a>
@@ -178,12 +185,12 @@ var _hmt = _hmt || [];
   </div>
 </div> -->
 
-<div class="post-top" style="background-color:#9A85FF;">
+<div class="post-top" style="background-color:#00E673;">
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="/2019/12/14/new-post.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#9A85FF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#9A85FF;"><sapn class="main">TEST PAGE</sapn></span></div>
+      <a href="/2019/12/14/new-post.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#00E673';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#00E673;"><sapn class="main">TEST PAGE</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
@@ -193,18 +200,18 @@ var _hmt = _hmt || [];
   </div>
   <div class="right-area">
     
-      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#9A85FF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
-      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#9A85FF;"><sapn class="main">jekyll问题汇总</sapn></span></div>
+      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#00E673';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#00E673;"><sapn class="main">jekyll问题汇总</sapn></span></div>
     
   </div>
 
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="/2019/12/14/new-post.html" class="leftchange" style="border-right: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>上一篇<br><br>TEST PAGE</span></a>
+      <a href="/2019/12/14/new-post.html" class="leftchange" style="border-right: 1px solid #00E673;border-bottom: 2px solid #00E673;"><span>上一篇<br><br>TEST PAGE</span></a>
     
     
-      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="rightchange" style="border-left: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>下一篇<br><br>jekyll问题汇总</span></a>
+      <a href="/2019/12/11/jekyll%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html" class="rightchange" style="border-left: 1px solid #00E673;border-bottom: 2px solid #00E673;"><span>下一篇<br><br>jekyll问题汇总</span></a>
     
   </div>
 </div>
@@ -214,21 +221,9 @@ var _hmt = _hmt || [];
 <div class="markdown-body fadeInUp animated">
 
   
-    <!-- 
-      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
-        自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。
-      </div>
-    
-      <div class="postpage-subtitle" style="border-left: 8px solid ; border-right: 8px solid ">
-        自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。
-      </div>
-     -->
-
-    <!-- 下面是更改过的 -->
-    <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF">
+    <div class="postpage-subtitle" style="border-left: 8px solid #00E673; border-right: 8px solid #00E673">
       自己的写作能力越来越差了，文本的表达都是问题，看着毕业论文三万字的要求，我不禁陷入了沉思。
     </div>
-    <!-- 上面是更改过的 -->
   
 
   <!-- 文章内容 -->
