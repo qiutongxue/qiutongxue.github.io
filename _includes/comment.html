@@ -1,4 +1,5 @@
-{% if site.disqus %}
+{% if site.comments.enable %}
+{% if site.comments.disqus.enable %}
     <section class="post-footer-item comment">
       <div id="disqus_thread"></div>
     </section>
@@ -17,7 +18,7 @@
         var d = document,
           s = d.createElement('script');
         /*写入自己的disqus信息*/
-        s.src = '{{ site.disqus_url }}';
+        s.src = '{{ site.comments.disqus.disqus_url }}';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
       })();
@@ -26,9 +27,9 @@
 
 {% endif %}
 
-{% if site.livere %}
+{% if site.comments.livere.enable %}
     <section class="post-footer-item comment">
-      <div id="lv-container" data-id="city" data-uid="{{ site.livere_uid }}"></div>
+      <div id="lv-container" data-id="city" data-uid="{{ site.comments.livere.livere_uid }}"></div>
     </section>
 
     <!-- 来必力City版安装代码 -->
@@ -50,7 +51,7 @@
 
 {% endif %}
 
-{% if site.Gitment %}
+{% if site.comments.Gitment.enable %}
 <section class="post-footer-item comment">
   <div id="container"></div>
 </section>
@@ -60,25 +61,25 @@
 <script>
 var gitment = new Gitment({
   id: '{{ page.id }}', // 可选。默认为 location.href
-  owner: '{{ site.Gitment_owner }}',
-  repo: '{{ site.Gitment_repo }}',
+  owner: '{{ site.comments.Gitment.Gitment_owner }}',
+  repo: '{{ site.comments.Gitment.Gitment_repo }}',
   oauth: {
-    client_id: '{{ site.client_id }}',
-    client_secret: '{{ site.client_secret }}',
+    client_id: '{{ site.comments.Gitment.client_id }}',
+    client_secret: '{{ site.comments.Gitment.client_secret }}',
   },
 })
 gitment.render('container')
 </script>
 {% endif %}
 
-{% if site.vssue %}
+{% if site.comments.vssue.enable %}
 <section class="post-footer-item comment">
   <div id="vssue"></div>
 </section>
 <script src="/assets/js/vue.js"></script>
-
-{% if site.vssue == 'github' %}
-<script src="/assets/lib/vssue/js/vssue.github-v4.min.js"></script>
+{% assign vstype = site.comments.vssue.type %}
+{% if vstype == 'github' %}
+<script src="/assets/lib/vssue/js/vssue.github.min.js"></script>
 <script>
   new Vue({
     el: '#vssue',
@@ -86,20 +87,20 @@ gitment.render('container')
     render: h => h('Vssue', {
       props: {
         // 在这里设置当前页面对应的 Issue 标题
-        title: 'Vssue Dev',
+        title: '{{ page.id }}',
 
         // 在这里设置你使用的平台的 OAuth App 配置
         options: {
-          owner: '{{ site.Gitment_owner }}',
-          repo: '{{ site.Gitment_repo }}',
-          clientId: '{{ site.client_id }}',
-          clientSecret: '{{ site.client_secret }}', // 只有在使用某些平台时需要
+          owner: '{{ site.comments.vssue.Github_owner }}',
+          repo: '{{ site.comments.vssue.Github_repo }}',
+          clientId: '{{ site.comments.vssue.client_id }}',
+          clientSecret: '{{ site.comments.vssue.client_secret }}', // 只有在使用某些平台时需要
         },
       }
     })
   })
 </script>
-{%- elsif site.vssue == 'gitee' -%}
+{%- elsif vstype == 'gitee' -%}
 <script src="/assets/lib/vssue/js/vssue.gitee.min.js"></script>
 <script>
   new Vue({
@@ -108,14 +109,14 @@ gitment.render('container')
     render: h => h('Vssue', {
       props: {
         // 在这里设置当前页面对应的 Issue 标题
-        title: 'Vssue Dev',
+        title: '{{ page.id }}',
 
         // 在这里设置你使用的平台的 OAuth App 配置
         options: {
-          owner: '{{ site.Gitee_owner }}',
-          repo: '{{ site.Gitee_repo }}',
-          clientId: '{{ site.Gitee_client_id }}',
-          clientSecret: '{{ site.Gitee_client_secret }}', // 只有在使用某些平台时需要
+          owner: '{{ site.comments.vssue.Gitee_owner }}',
+          repo: '{{ site.comments.vssue.Gitee_repo }}',
+          clientId: '{{ site.comments.vssue.Gitee_client_id }}',
+          clientSecret: '{{ site.comments.vssue.Gitee_client_secret }}', // 只有在使用某些平台时需要
         },
       }
     })
@@ -123,3 +124,5 @@ gitment.render('container')
 </script>
 {% endif %}
 {% endif %}
+
+{%- endif -%}
