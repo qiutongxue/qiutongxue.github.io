@@ -5,7 +5,7 @@ categories: 杂文
 tags: 
     - 置顶
     - 博客开通啦
-subtitle: 刚开通博客，还是有很多想法的~
+subtitle: 这是一篇置顶文章哦
 sticky: true
 ---
 
@@ -18,6 +18,6 @@ sticky: true
 - 不定期的测试类文章
 - 网页里各种奇怪的bug
 
-如果对这个主页的功能有什么创新性的idea，或者发现了哪怕是小小小小的bug，都欢迎到[这个ISSUE](https://github.com/qiutongxue/qiutongxue.github.io/issues)中发表哦~
+如果对这个主页的功能有什么创新性的idea，或者发现了哪怕是小小小小的bug，~~都欢迎到[这个ISSUE](https://github.com/qiutongxue/qiutongxue.github.io/issues)中发表哦~~，可以在**下方的评论区**里留言说明哦（国内的Gitee出了点问题，只能用Github账号登啦，可能加载会有一点慢）
 
-ps. 等我找到了合适的评论功能就不用这么麻烦了哈哈哈
+~~ps. 等我找到了合适的评论功能就不用这么麻烦了哈哈哈~~
