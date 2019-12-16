@@ -69,9 +69,4 @@
     <a class="page-link" rel="next" href="{{ paginator.next_page_path | relative_url }}">{{ next_text }}</a>
   {% endif %}
 {% endcapture %}
-<script>
-  console.log({{ site.paginate_path | relative_url}});
-  console.log({{ site.baseurl }});
-  console.log({{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', 1 }});
-</script>
 {% assign paginator = paginator | normalize_whitespace %}
