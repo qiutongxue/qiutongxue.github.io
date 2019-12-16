@@ -1,9 +1,11 @@
 {% for post in paginator.posts %}
-{%- assign color-num = post.content.size | modulo: site.page-color.size -%}
-{%- assign page-color = site.page-color[color-num] -%}
-{%- if post.color.size > 0 -%}
-    {% assign page-color = post.color %}
-{%- endif -%}
+{% if paginator.page == 1 and post.sticky %}
+<!-- 置顶 -->
+    {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
+    {%- assign page-color = site.page-color[color-num] -%}
+    {%- if post.color.size > 0 -%}
+        {% assign page-color = post.color %}
+    {%- endif -%}
 <a href="{{ post.url }}">
     <li class="fadeInUp animated" color="{{page-color}}">
         {% if post.cover %}
@@ -28,4 +30,39 @@
         </footer>
     </li>
 </a>
+{% endif %}
+{% endfor %}
+
+{% for post in paginator.posts %}
+{% if paginator.page > 1 or post.sticky == nil or post.sticky.size == 0 %}
+    {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
+    {%- assign page-color = site.page-color[color-num] -%}
+    {%- if post.color.size > 0 -%}
+        {% assign page-color = post.color %}
+    {%- endif -%}
+<a href="{{ post.url }}">
+    <li class="fadeInUp animated" color="{{page-color}}">
+        {% if post.cover %}
+        <div class="post-cover" style="background:url({{ post.cover }});background-size:cover;background-position:center;"></div>
+        {% endif %}
+        <section class="post-preview">
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+            {% endif %}
+            {% if post.subtitle.size==0 or post.subtitle==nil %}
+            <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
+            {% endif %}
+        </section>
+        <footer class="post-tags">
+            {% if post.tags.size > 0 %}
+                {% for tag in post.tags  %}
+                <a href={{ "tags.html#" | append: tag | pretend: site.baseurl }} class="post-tag">{{ tag }}</a>
+                {% endfor %}
+            {% endif %}
+            <time class="post-date" datetime="{{ post.date | date:"%y-%m-%d" }}">{{ post.date | date_to_string }}</time>
+        </footer>
+    </li>
+</a>
+{% endif %}
 {% endfor %}
