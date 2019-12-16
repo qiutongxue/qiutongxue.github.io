@@ -45,14 +45,14 @@
   {% assign current_minus_one = current | minus: 1 %}
   {% if left_mid > left_end %}
     {% for i in (left_mid..current_minus_one) %}
-      <a class="page-link" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
+      <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
     {% endfor %}
   {% endif %}
   {{ current_page }}
 
   {% if right_mid < right_end %}
     {% for i in (current_plus_one..right_mid) %}
-      <a class="page-link" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
+      <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
     {% endfor %}
   {% endif %}
 
@@ -62,11 +62,16 @@
   {% endif %}
 
   {% for i in (right_end..total) %}
-    <a class="page-link" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
+    <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', i }}">{{ i }}</a>
   {% endfor %}
 
   {% if current < total %}
     <a class="page-link" rel="next" href="{{ paginator.next_page_path | relative_url }}">{{ next_text }}</a>
   {% endif %}
 {% endcapture %}
+<script>
+  console.log({{ site.paginate_path | relative_url}});
+  console.log({{ site.baseurl }});
+  console.log({{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', 1 }});
+</script>
 {% assign paginator = paginator | normalize_whitespace %}
