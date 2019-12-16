@@ -92,15 +92,17 @@ livere_uid: '' # MTAyMC8zNDI2OS8xMDgwNg==
 # Gitment评论 OAuth Application
 Gitment: false
 #Vssue评论，也是OAuth Application，相应配置与Gitment相同，就不赘述了
-vssue: true
+vssue: 'gitee' # 可用： github、gitee
 # 下面是Gitment和Vssue的配置 （Vssue和Gitment只能二选一）
 Gitment_owner: 'qiutongxue'  # github用户名
 Gitment_repo: 'qiutongxue.github.io'  # github博客存放的仓库名
 client_id: '05284778ce91bf83f1bf'  # 注册 OAuth Application 后获得的 client_id
 client_secret: '479b8271851db1055103d3edef0beaedc00ad644'  # 注册 OAuth Application 后获得的 client_secret
-
-
-
+# 下面是Vssue中使用gitee的配置
+Gitee_owner: CallMeQiu
+Gitee_repo: comments-repository
+Gitee_client_id: 38a30648559e1a52ba71d90691e64a296b509615796884b7e97abb78b0bb4e6a
+Gitee_client_secret: 6755c77c8a4cc2cc0e223051aa7ff50bcbb9a29e04a8dd60cc43958ebf8b3fa9
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
 social-share: true
