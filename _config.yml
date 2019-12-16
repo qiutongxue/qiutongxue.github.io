@@ -90,9 +90,9 @@ disqus_url: '' # https://abc.disqus.com/embed.js
 livere: false
 livere_uid: '' # MTAyMC8zNDI2OS8xMDgwNg==
 # Gitment评论 OAuth Application
-Gitment: false
+Gitment: true
 #Vssue评论，也是OAuth Application，相应配置与Gitment相同，就不赘述了
-vssue: true
+vssue: false
 # 下面是Gitment和Vssue的配置 （Vssue和Gitment只能二选一）
 Gitment_owner: 'qiutongxue'  # github用户名
 Gitment_repo: 'qiutongxue.github.io'  # github博客存放的仓库名
