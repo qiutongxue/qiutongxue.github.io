@@ -36,12 +36,12 @@ SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','
   weixin: '###' # 你的微信二维码存放的地址
   qq: '###' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: 'https://github.com/qiutongxue'
-  bilibili: 'https://space.bilibili.com/3995868'
-  weibo: 'https://weibo.com/u/5899574062'
+  bilibili: 'https://space.bilibili.com'
+  weibo: 'https://weibo.com/'
   neteaseCloudMusic: 'https://music.163.com/#/user/home?id=269757591'
-  zhihu: 'https://www.zhihu.com/people/qiu-bo-wei-79/activities'
-  steam: 'https://steamcommunity.com/id/994702889/'
-  RSS: '/feed.xml'
+  zhihu: 'https://www.zhihu.com/'
+  steam: 'https://steamcommunity.com/'
+  # RSS: '/feed.xml'
   # bilitv: '' #小电视形态
   # instagram: ''
   # Twitter: ''
