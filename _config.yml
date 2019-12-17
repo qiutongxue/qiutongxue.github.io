@@ -27,6 +27,7 @@ about: true
 aboutyou: '大家好，欢迎来到我的个人博客，可以通过下方的渠道和我交流~'
 portraits: '/assets/profile.jpg' # your portraits image file path
 
+icon-source: '//at.alicdn.com/t/font_1568694_anow0plismf.css'
 # SNS
 SNS: true
 # SNS图标地址（iconfont阿里图标）

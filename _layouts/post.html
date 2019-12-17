@@ -11,7 +11,7 @@
 {% comment %}
 {%- assign number = page.date | date: "%s" | divided_by: 100 | modulo: site.page-color.size -%}
 {% endcomment %}
-{%- assign content-size = page.content | strip_html | strip_newlines | size -%}
+{%- assign content-size = page.content | strip_html | strip_newlines | remove: " " | size -%}
 {%- assign color-num = page.content.size | modulo: site.page-color.size -%}
 {%- assign page-color = site.page-color[color-num] -%}
 {%- if page.color.size > 0 -%}
@@ -26,12 +26,21 @@
 <!-- 引入博文顶部样式 -->
 {% include post-title.html %}
 <div class="markdown-body fadeInUp animated">
-
+  <!-- 文章的推荐阅读时间/字数，浏览量 -->
+  <div class="total-words-div">
+    <span>本文共：{{ content-size }}字，
+      推荐阅读时间：{{ content-size | divided_by: 350.0 | ceil }} min</span>
+    <span class="post-meta-divider">|</span>
+    <span><i class="iconfont icon-liulan"></i>
+      <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+    </span>  
+  </div>
   {% if page.subtitle %}
     <div class="postpage-subtitle" style="border-left: 4px solid {{ page-color }}; border-right: 4px solid {{ page-color }}">
       {{ page.subtitle }}
     </div>
   {% endif %}
+
 
   <!-- 文章内容 -->
   {{ page.content }}
