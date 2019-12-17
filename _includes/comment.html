@@ -165,11 +165,18 @@ gitment.render('container')
         'border-color': '{{ page-color }}'
       });
       $(".vssue .vssue-button:disabled").css({
-        'cursor': 'not-allowed',
+        // 'cursor': 'not-allowed',
         'color': '#eaecef',
         'border-color':' #eaecef'
+      });
+      $(".vssue .vssue-notice .vssue-progress").css({
+        'background-color': '{{ page-color }}'
+      });
+      $(".vssue .vssue-notice .vssue-alert").css({
+        'color': '{{- page-color -}}',
+        'border-color': '{{- page-color -}}' + '30',
+        'background-color': '{{- page-color -}}'+'0D'
       })
-      
       $(".vssue .vssue-new-comment .vssue-new-comment-input")
       .focusin(function(){
           $(this).css({

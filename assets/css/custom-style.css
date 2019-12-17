@@ -86,3 +86,17 @@
 .post-meta-divider {
     margin: 0 .5em;
 }
+
+.finished-task {
+    margin: 0 1em;
+    color: rgb(170, 214, 153);
+    font-weight: bold;
+}
+
+.MathJax {
+    outline:0px;
+}
+
+.MathJax span.mi, .MathJax span.mo{
+    color: black;
+}

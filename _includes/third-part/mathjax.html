@@ -1,0 +1,32 @@
+{% if site.mathjax.enable %}
+  {% if page.layout == 'index' or page.mathjax or site.mathjax.per_page == nil or site.mathjax.per_page == false %}
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        "HTML-CSS": {
+          availableFonts: ["STIX","TeX"],
+          showMathMenu: false
+        },
+        showProcessingMessages: false,
+        messageStyle: "none",
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="{{ site.mathjax.cdn }}"></script>
+  {% endif %}
+{% endif %}

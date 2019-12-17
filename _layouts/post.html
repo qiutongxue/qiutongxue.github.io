@@ -5,6 +5,7 @@
 <!-- 引入head标签 -->
 {% include head.html %}
 {% include androidColor.html %}
+{% include third-part/mathjax.html %}
 </head>
 <body>
 <!-- 默认根据文章字数选择颜色，页面中设置的颜色优先 -->
@@ -91,5 +92,22 @@
     }
 </script>
 <script src="/assets/js/main.js"></script>
+
+<!-- task美化 -->
+<script>
+$(function() {
+  $(".task-list-item-checkbox").prop("checked", function(i, origValue){
+    // console.log(origValue);
+    if (!origValue){
+      return;
+    }
+    // console.log(($(this).parent().text()));
+    $(this).parent().html(function(i, origValue){
+      // console.log($(this).children());
+      return '<del>' + origValue + '</del><i class="iconfont icon-icon2 finished-task"></i>';
+    })
+  })
+})
+</script>
 </body>
 </html>

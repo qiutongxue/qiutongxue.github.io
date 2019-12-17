@@ -70,7 +70,13 @@ SNS-qrcode:
 paginate: 5
 paginatepath: ['page:num']
 
-# since
+# 引入Mathjax
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+  # since
 footer:
   since: 2019
 
