@@ -52,3 +52,52 @@
         
     })
 </script>
+
+<!-- 脚注增强 -->
+<script>
+    $(function() {
+        $(".footnote").prop("href", function(i, value) {
+            var id = value.split("#");
+            id = "#" + id[1];
+            // console.log(id);
+            id = id.replace(":", "\\:");
+            // console.log(id);
+            // 获得脚注文字
+            var footnoteText = $(id).text().trim().slice(0,-1);
+            var footnote = $(this);
+            var offset = footnote.offset();
+            var popoverid = getUID(this.type);
+            // t
+            $(this).parent().parent().css({
+                'position': 'relative'
+            }).append("<div class='footnote-div' id='" + popoverid + "'></div>");
+            // console.log($("#"+popoverid));
+            
+            // console.log(offset)
+            // console.log(footnote.width());
+            bodyOffset = $(".markdown-body").offset();
+            // console.log(bodyOffset);
+            $(this).mouseover(function(){
+
+                $("#"+popoverid).html(function(value){
+                    return "<span>" + footnoteText +"</span>"
+                })
+                .css('left',offset.left + 2 - bodyOffset.left - $("#"+popoverid).outerWidth() / 2 + 'px' )
+                    .css('display','inline-block');
+                // console.log(offset.left+ 2 - bodyOffset.left+ 'px' );
+                // console.log($("#"+popoverid).outerWidth())
+            })
+            $(this).mouseout(function() {
+                $("#"+popoverid)
+                    .css('display','none');
+            })
+        });
+        
+    })
+
+    var getUID = function(prefix) {
+        do prefix += ~~(Math.random() * 1000000)
+        while (document.getElementById(prefix))
+        return prefix
+    }
+</script>

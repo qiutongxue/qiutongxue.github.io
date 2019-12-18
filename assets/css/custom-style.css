@@ -136,3 +136,18 @@
     max-width: 630px;
 }
 
+.footnote-div {
+    border:1px solid black;   
+    max-width:250px;
+    width: auto;
+    height: auto;
+    text-align:center;
+    padding:6px;  
+    background-color: white;
+    position:absolute;
+    z-index:99;
+    display:none;    /*使div初始化时隐藏*/
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(149, 150, 149);
+    font-size: small;
+}
