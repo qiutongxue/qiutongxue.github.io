@@ -101,11 +101,16 @@ $(function() {
     if (!origValue){
       return;
     }
-    // console.log(($(this).parent().text()));
+    
     $(this).parent().html(function(i, origValue){
       // console.log($(this).children());
-      return '<del>' + origValue + '</del><i class="iconfont icon-icon2 finished-task"></i>'
-            + $(this).children("[type=hidden]").val();
+      var arr = origValue.split(/\s*\[date\]\s*/g);
+      var text = arr[0];
+      var date = arr[1];
+      console.log(arr);
+      if (date == undefined) date = '';
+      return '<del>' + text + '</del><i class="iconfont icon-icon2 finished-task"></i>'
+            + date;
     })
   })
 })
