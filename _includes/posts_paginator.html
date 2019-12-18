@@ -1,6 +1,7 @@
 {% for post in paginator.posts %}
 {% if paginator.page == 1 and post.sticky %}
 <!-- 置顶 -->
+{%- assign content-size = post.content | strip_html | strip_newlines | remove: " " | size -%}
     {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
     {%- assign page-color = site.page-color[color-num] -%}
     {%- if post.color.size > 0 -%}
@@ -19,6 +20,18 @@
             {% if post.subtitle.size==0 or post.subtitle==nil %}
             <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
             {% endif %}
+
+            <div class="time-to-read post-date">
+                
+                {%- assign readingTime = content-size | divided_by: 350.0 | ceil -%}
+                <span class="time-to-read-num">{{ readingTime }}</span>
+                {%- if readingTime <= 1 -%}
+                Min  to Read
+                {%- else -%}
+                Mins to Read
+                {%- endif -%}
+                
+            </div>
         </section>
         <footer class="post-tags">
             {% if post.tags.size > 0 %}
@@ -36,6 +49,7 @@
 
 {% for post in paginator.posts %}
 {% if paginator.page > 1 or post.sticky == nil or post.sticky.size == 0 %}
+    {%- assign content-size = post.content | strip_html | strip_newlines | remove: " " | size -%}
     {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
     {%- assign page-color = site.page-color[color-num] -%}
     {%- if post.color.size > 0 -%}
@@ -54,6 +68,17 @@
             {% if post.subtitle.size==0 or post.subtitle==nil %}
             <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 126}}</p>
             {% endif %}
+            <div class="time-to-read post-date">
+                
+                {%- assign readingTime = content-size | divided_by: 350.0 | ceil -%}
+                <span class="time-to-read-num">{{ readingTime }}</span>
+                {%- if readingTime <= 1 -%}
+                Min  to Read
+                {%- else -%}
+                Mins to Read
+                {%- endif -%}
+                
+            </div>
         </section>
         <footer class="post-tags">
             {% if post.tags.size > 0 %}

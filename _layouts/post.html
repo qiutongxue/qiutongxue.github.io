@@ -60,6 +60,11 @@
   {{ page.content }}
   <!-- 引入share模块 -->
   {% include share.html %}
+
+  <!-- 文章发布日期 -->
+  <div class="post-date">
+    于 {{page.date | date: "%Y年%m月%d日" }}
+  </div>
 </div>
 
 <!-- 底部锚点 -->

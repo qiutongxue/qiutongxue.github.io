@@ -1,0 +1,13 @@
+@media screen and ( max-width : 800px ){
+    .total-words-div {
+        color: black;
+    }
+    .time-to-read {
+        color: rgb(162, 168, 164);
+        font-style: italic;
+        bottom: -60px;
+        right: unset;
+        top: unset;
+        left: 10px;
+    }
+}

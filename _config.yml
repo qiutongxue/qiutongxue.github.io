@@ -133,7 +133,7 @@ comments:
     Gitee_client_secret: '6755c77c8a4cc2cc0e223051aa7ff50bcbb9a29e04a8dd60cc43958ebf8b3fa9'
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
-social-share: true
+social-share: false
 social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 
 # 百度统计 在baidu-url里填写自己相关的url代码

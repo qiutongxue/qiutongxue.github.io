@@ -73,11 +73,7 @@
     display: block;
 }
 
-@media screen and ( max-width : 800px ){
-    .total-words-div {
-        color: black;
-    }
-}
+
 
 .markdown-body {
     position: relative;
@@ -91,6 +87,11 @@
     margin: 0 .2em 0 1em;
     color: rgb(170, 214, 153);
     font-weight: bold;
+    cursor: pointer;
+}
+
+.finished-task[date=''] {
+    cursor: default;
 }
 
 .MathJax {
@@ -100,3 +101,38 @@
 .MathJax span.mi, .MathJax span.mo{
     color: black;
 }
+
+.markdown-body .post-date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+}
+
+.post-subtitle {
+    font-weight: 100;
+}
+
+.post-list li {
+    position: relative;
+}
+
+.time-to-read-num {
+    margin: 0 .5em;
+}
+
+.time-to-read {
+    color: rgb(162, 168, 164);
+    font-style: italic;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+.post-preview {
+    position: relative;
+}
+
+.post-title {
+    max-width: 630px;
+}
+
