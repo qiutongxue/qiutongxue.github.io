@@ -88,7 +88,7 @@
 }
 
 .finished-task {
-    margin: 0 1em;
+    margin: 0 .2em 0 1em;
     color: rgb(170, 214, 153);
     font-weight: bold;
 }

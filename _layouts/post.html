@@ -104,7 +104,8 @@ $(function() {
     // console.log(($(this).parent().text()));
     $(this).parent().html(function(i, origValue){
       // console.log($(this).children());
-      return '<del>' + origValue + '</del><i class="iconfont icon-icon2 finished-task"></i>';
+      return '<del>' + origValue + '</del><i class="iconfont icon-icon2 finished-task"></i>'
+            + $(this).children("[type=hidden]").val();
     })
   })
 })
