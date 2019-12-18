@@ -18,7 +18,7 @@ sticky: true
 - 不定期的测试类文章
 - 网页里各种奇怪的bug
 
-如果对这个主页的功能有什么创新性的idea，或者发现了哪怕是小小小小的bug，~~都欢迎到[这个ISSUE](https://github.com/qiutongxue/qiutongxue.github.io/issues)中发表哦~~，可以在**下方的评论区**里留言说明哦（国内的Gitee出了点问题，只能用Github账号登啦，可能加载会有一点慢）
+如果对这个主页的功能有什么创新性的idea，或者发现了哪怕是小小小小的bug，~~都欢迎到[这个ISSUE](https://github.com/qiutongxue/qiutongxue.github.io/issues)中发表哦~~可以在**下方的评论区**里留言说明哦（国内的Gitee出了点问题，只能用Github账号登啦，可能加载会有一点慢）
 
 计划：
 

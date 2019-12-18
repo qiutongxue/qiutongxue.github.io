@@ -1,0 +1,15 @@
+<script>
+    $(function() {
+        $(".tag-post").mouseover(function(){
+            var bgcolor = $(this).attr("color");
+            $(this).css({
+                color: bgcolor
+            })
+        }).mouseout(function(){
+            $(this).css({
+                color: "#555"
+            })
+        })
+        
+    })
+</script>

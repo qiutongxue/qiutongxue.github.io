@@ -1,0 +1,44 @@
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+
+<!-- task美化 -->
+<script>
+$(function() {
+  $(".task-list-item-checkbox").prop("checked", function(i, origValue){
+    // console.log(origValue);
+    if (!origValue){
+      return;
+    }
+    
+    $(this).parent().html(function(i, origValue){
+      // console.log($(this).children());
+      var arr = origValue.split(/\s*\[date\]\s*/g);
+      var text = arr[0];
+      var date = arr[1];
+    //   console.log(arr);
+      if (date == undefined) date = '';
+      return '<del>' + text + '</del><i class="iconfont icon-icon2 finished-task"></i>'
+            + date;
+    })
+  })
+})
+</script>

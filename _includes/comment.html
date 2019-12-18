@@ -124,77 +124,7 @@ gitment.render('container')
 </script>
 {% endif %}
 {% if site.color-bind.comments %}
-<script>
-  $(function() {
-    
-    $(".vssue :not(.vssue-comment-content) a").css({
-      'color': '{{ page-color }}'
-    });
-    $(".vssue .vssue-status").css({
-      'color': '{{ page-color }}'
-    });
-    $(".vssue .vssue-icon").css({
-      "fill": '{{ page-color }}'
-    });
-    // 监听
-    $("section.comment").on("DOMSubtreeModified", function(){
-
-      $(".vssue :not(.vssue-comment-content) a").css({
-        'color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-status").css({
-        'color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-icon").css({
-        "fill": '{{ page-color }}'
-      });
-      $(".vssue .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-reactions .vssue-comment-reaction").css({
-        'color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-new-comment .vssue-new-comment-input").css({
-        'background-color': '{{- page-color -}}'+'0D'
-      });
-      $(".vssue .vssue-pagination .vssue-pagination-select").css({
-        'border-color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-button:not(:disabled).vssue-button-primary").css({
-        'color': '{{ page-color }}',
-        'border-color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-button").css({
-        'border-color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-button:disabled").css({
-        // 'cursor': 'not-allowed',
-        'color': '#eaecef',
-        'border-color':' #eaecef'
-      });
-      $(".vssue .vssue-notice .vssue-progress").css({
-        'background-color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-notice .vssue-alert").css({
-        'color': '{{- page-color -}}',
-        'border-color': '{{- page-color -}}' + '30',
-        'background-color': '{{- page-color -}}'+'0D'
-      })
-      $(".vssue .vssue-new-comment .vssue-new-comment-input")
-      .focusin(function(){
-          $(this).css({
-          'border-color': '{{- page-color -}}',
-          '-webkit-box-shadow': '0 0 1px 1px {{- page-color -}}',
-          'box-shadow': '0 0 1px 1px {{- page-color -}}',
-        });
-      })
-      .focusout(function() {
-        $(this).css({
-          'border': '1px solid #eaecef',
-          '-webkit-box-shadow': 'none',
-          'box-shadow': 'none',
-        });
-      });
-    });
-  })
-</script>
+{% include _js/comment.html %}
 {% endif %}
 {% endif %}
 
