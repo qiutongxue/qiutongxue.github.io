@@ -30,12 +30,27 @@
             }
             $(this).parent().html(function (i, origValue) {
                 // console.log($(this).children());
-                var arr = origValue.split(/\s*\[date\]\s*/g);
-                var text = arr[0];
-                var date = arr[1];
-                if (date == undefined) date = '';
-                return '<del>' + text +
-                    '</del><i class="iconfont icon-icon2 finished-task" date="'+ date + '"></i>';
+                var matchedArr = origValue.match(/\[\[(.*?)\]\]/);
+                // console.log(matchedArr);
+                if (matchedArr == null) {
+                    var tip = '';
+                    var text = origValue;
+                }
+                else {
+                    var tip = matchedArr[1];
+                    var text = origValue.substring(0, origValue.indexOf("[["));
+                }
+
+
+                text = '<del>' + text +'</del>';
+                if (tip != 'cancel') {
+                    var date = tip;
+                    if (date == undefined) date = '';
+                    return text + '<i class="iconfont icon-finish finished-task task-icon" date="'+ date + '"></i>';
+                }
+                else if (tip == 'cancel') {
+                    return text + '<i class="iconfont icon-cancel canceled-task task-icon"></i>';
+                }
             })
         });
         $(".finished-task").attr("date", function(i, orginValue){
@@ -49,6 +64,12 @@
                 trigger: 'hover'
             });
         })
+
+        $(".canceled-task").popover({
+            content: '可以有，但没必要',
+            placement: 'auto right',
+            trigger: 'hover'
+        })
         
     })
 </script>
@@ -59,9 +80,7 @@
         $(".footnote").prop("href", function(i, value) {
             var id = value.split("#");
             id = "#" + id[1];
-            // console.log(id);
             id = id.replace(":", "\\:");
-            // console.log(id);
             // 获得脚注文字
             var footnoteText = $(id).text().trim().slice(0,-1);
             var footnote = $(this);
@@ -71,10 +90,8 @@
             $(this).parent().parent().css({
                 'position': 'relative'
             }).append("<div class='footnote-div' id='" + popoverid + "'></div>");
-            // console.log($("#"+popoverid));
             
-            // console.log(offset)
-            // console.log(footnote.width());
+            var parentOffset = ($(this).parent().parent().offset());
             bodyOffset = $(".markdown-body").offset();
             // console.log(bodyOffset);
             $(this).mouseover(function(){
@@ -83,13 +100,17 @@
                     return "<span>" + footnoteText +"</span>"
                 })
                 .css('left',offset.left + 2 - bodyOffset.left - $("#"+popoverid).outerWidth() / 2 + 'px' )
-                    .css('display','inline-block');
+                .css({
+                    'top': offset.top - parentOffset.top + 30 + 'px'
+                })
+                .fadeIn();
                 // console.log(offset.left+ 2 - bodyOffset.left+ 'px' );
                 // console.log($("#"+popoverid).outerWidth())
             })
             $(this).mouseout(function() {
-                $("#"+popoverid)
-                    .css('display','none');
+                $("#"+popoverid).css({
+                    display: 'none',
+                })
             })
         });
         

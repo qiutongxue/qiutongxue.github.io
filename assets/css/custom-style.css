@@ -84,10 +84,17 @@
 }
 
 .finished-task {
-    margin: 0 .2em 0 1em;
     color: rgb(170, 214, 153);
-    font-weight: bold;
+}
+
+.task-icon {
+    margin: 0 .2em 0 1em;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.canceled-task {
+    color: rgb(235, 77, 108);
 }
 
 .finished-task[date=''] {
@@ -150,4 +157,22 @@
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgb(149, 150, 149);
     font-size: small;
+}
+
+.post-list li:hover{
+    -webkit-transform: translateY(45px);
+    transform: translateY(45px);
+}
+
+.footnotes {
+    display: none;
+    font-size: 12px;
+    color: rgb(80, 80, 80);
+    margin-bottom: .3em;
+    margin-top: .5em;
+}
+
+.postpage-subtitle {
+    background-color: transparent;
+    
 }

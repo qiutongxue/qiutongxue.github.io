@@ -28,7 +28,7 @@ aboutyou: '大家好，欢迎来到我的个人博客，可以通过下方的渠
 portraits: '/assets/profile.jpg' # your portraits image file path
 
 # 图标库（iconfont）
-icon-source: '//at.alicdn.com/t/font_1568694_9byqjhs6fji.css'
+icon-source: '//at.alicdn.com/t/font_1568694_cvp1awb4z75.css'
 total-words-before: '<i class="iconfont icon-text"></i>'    #文章字数前缀
 total-words-after: '字'       #文章字数后缀
 time-to-read-before: '<i class="iconfont icon-time"></i>'     #预计阅读时间前缀
@@ -59,6 +59,8 @@ SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','
   # linkedin: ''
   # lofter: ''
   # codepen: ''
+
+
 social_mail:
   gmail: 'xqiutongxue@gmail.com'
   outlook: 'qiutongxue@outlook.com'
@@ -166,6 +168,11 @@ page-color:
   - "#FF9700"  #橙
   - "#FB7299"  #Bilibili粉
   - "#20E3C9"  #青色
+  - "#82C8A0"  #green
+  - "#7fccde"  #cyan
+  - "#6698cb"  #blue
+  - "#cb99c5"  #紫色
+  - "#fa5a5a"  #红色
   
 
   
