@@ -174,5 +174,8 @@
 
 .postpage-subtitle {
     background-color: transparent;
-    
+}
+
+legend {
+    font-size: small;
 }
