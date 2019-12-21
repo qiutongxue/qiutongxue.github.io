@@ -184,6 +184,7 @@ legend {
     margin-top: -1em;
     margin-bottom: 2em;
     text-align: center;
+    display: block;
 }
 
 blockquote {
