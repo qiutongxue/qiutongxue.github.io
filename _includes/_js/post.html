@@ -122,3 +122,15 @@
         return prefix
     }
 </script>
+
+<script>
+    $(function() {
+        var width = $("iframe").width();
+        console.log(width);
+        var height = width * 9 / 16;
+        console.log(height);
+        $("iframe").css({
+            'height': height
+        })
+    });
+</script>

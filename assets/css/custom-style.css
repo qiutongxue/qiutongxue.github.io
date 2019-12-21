@@ -189,3 +189,9 @@ blockquote {
     text-overflow: ellipsis;
     max-height: 300px;
 }
+
+iframe {
+    width: 100%;
+    display: block;
+    margin: 50px 0px;
+}
