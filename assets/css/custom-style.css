@@ -178,4 +178,14 @@
 
 legend {
     font-size: small;
+    color: rgb(109, 107, 107);
+    margin-top: -1em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+blockquote {
+    overflow: auto;
+    text-overflow: ellipsis;
+    max-height: 300px;
 }
