@@ -107,3 +107,21 @@
        url("../fonts/DankMonoNormal/DankMonoNormal.eot") format("embedded-opentype"),
        url("../fonts/DankMonoNormal/DankMonoNormal.svg") format("svg");
 }
+
+@font-face {
+     font-family: 'Mplus1p';
+     src: url('/assets/fonts/Mplus/mplus-1p-light.ttf');
+     font-weight: lighter;
+}
+
+@font-face {
+     font-family: 'Mplus1p';
+     src: url('/assets/fonts/Mplus/mplus-1p-regular.ttf');
+     font-weight: normal;
+}
+
+@font-face {
+     font-family: 'Mplus1p';
+     src: url('/assets/fonts/Mplus/mplus-1p-bold.ttf');
+     font-weight: bold;
+}

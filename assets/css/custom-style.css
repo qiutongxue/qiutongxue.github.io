@@ -1,3 +1,5 @@
+@import "/assets/css/font.css";
+
 .QRImg {
     width: 100px;
     height: 100px;
@@ -194,4 +196,9 @@ iframe {
     width: 100%;
     display: block;
     margin: 50px 0px;
+}
+
+.markdown-body {
+    font-family: Mplus1p;
+    /* font-weight: lighter; */
 }
