@@ -69,7 +69,7 @@ SNS-qrcode:
   weixin: true
   qq: true
 # 分页
-paginate: 5
+paginate: 10
 paginatepath: ['page:num']
 
 # 引入Mathjax
