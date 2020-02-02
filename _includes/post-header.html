@@ -6,6 +6,11 @@
       </div>
       <nav class="top-nav">
           <ul>
+              {% if site.search %}
+              <li class="post-header-search">
+                {% include _helper/search.html %}
+              </li>
+              {% endif %}
               {% for i in site.nav %}
                 <li><a href="{{ i[1] }}" style="color: white;">{{ i[0] }}</a></li>
               {% endfor %}

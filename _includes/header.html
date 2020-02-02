@@ -5,6 +5,12 @@
       </div>
       <nav class="top-nav">
           <ul>
+            {% if site.search %}
+            <!-- 搜索功能  -->
+            <li class="header-search">
+              {% include _helper/search.html %}
+            </li>
+            {% endif %}
               {% for i in site.nav %}
                 <li><a href="{{ i[1] }}">{{ i[0] }}</a></li>
               {% endfor %}
@@ -17,3 +23,5 @@
   </div>
 
 </header>
+
+{% include _js/search.html %}

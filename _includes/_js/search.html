@@ -1,0 +1,126 @@
+<script>
+$(function() {
+    var searchInput = $(".search-input");
+    var searchBtn = $(".search-icon");
+    var searchResults = $(".search-results");
+    var searchValue = '',
+    arrItems = [],
+    arrContents = [],
+    arrLinks = [],
+    arrTags = [],
+    arrTitles = [],
+    arrResults = [],
+    indexItem = [],
+    arrSubtitles = [],
+    itemLength = 0;
+    
+    var tmpDiv = document.createElement("div");
+    tmpDiv.className = 'result-item';
+
+    $.get("/search.xml", function(data, status){
+        var items = $(data).find("item");
+        $(items).each(function(){
+            var item = $(this);
+            arrItems.push(item);
+            arrContents.push(item.children("content").text());
+            arrTitles.push(item.children("title").text());
+            arrSubtitles.push(item.children("description").text());
+            arrTags.push(item.children("tags"));
+            arrLinks.push(item.children("link").text());
+        })
+        itemLength = arrItems.length;
+        // console.log("success");
+    })
+
+    $("input.search-input").on("input",function() {
+        searchConfirm();
+    });
+
+    function searchConfirm() {
+        // console.log("searchConfirm");
+        var value = $(searchInput).val();
+        if(value == '') {
+            $(searchResults).css("display","none");
+        }
+        else if(value.search(/^\s+$/) >= 0) {
+            // 输入为空格
+            searchInit();
+            var itemDiv = $(tmpDiv).clone();
+            $(itemDiv).text("请输入有效内容...");
+            $(searchResults).append(itemDiv);
+
+        }
+        else {
+            // 合法输入
+            searchInit();
+            searchValue = value;
+            // 在标题、内容查找
+            searchMatching(arrTitles, arrSubtitles, arrContents, searchValue);
+        }
+    }
+
+
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        $(searchResults).html('');
+        $(searchResults).css("display", "block");
+    }
+
+
+
+    function searchMatching(arr1, arr2, arr3, input) {
+        input = new RegExp(input, 'i'); // 忽略大小写
+        for(i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1 || arr2[i].search(input) !== -1 || arr3[i].search(input) !== -1) {
+                if(arr1[i].search(input) !== -1) {
+                    var arr = arr1;
+                }else if(arr2[i].search(input) !== -1) {
+                    var arr = arr2;
+                } else {
+                    var arr = arr3;
+                }
+                indexItem.push(i);
+                var indexContent = arr[i].search(input);
+                var l = input.toString().length - 3;
+                var step = 10;
+                var start = indexContent - step;
+                if (indexContent - step < 0) {
+                    start = 0
+                }
+                arrResults.push(arr[i].slice(start, indexContent) + "<mark>" + arr[i].slice(indexContent, indexContent+l) +'</mark>' + arr[i].slice(indexContent+l,indexContent+l+step));
+
+            }
+        }
+
+        if (indexItem.length == 0) {
+            var itemDiv = $(tmpDiv).clone();
+            $(itemDiv).text("未匹配到内容...");
+            $(searchResults).append(itemDiv);
+        } 
+        else {
+            var totalDiv = $(tmpDiv).clone();
+            $(totalDiv).html("总匹配：<b>"+ indexItem.length +"</b> 项");
+            $(totalDiv).addClass("total-match");
+            $(searchResults).append(totalDiv);
+            for(i = 0; i < arrResults.length; i++) {
+                var itemDiv = $(tmpDiv).clone();
+                $(itemDiv).html("<b>《"+arrTitles[indexItem[i]]+"》</b><br>"+arrResults[i]);
+                var link = arrLinks[indexItem[i]];
+                $(itemDiv).attr("href", arrLinks[indexItem[i]]);
+                $(searchResults).append(itemDiv);
+                $(searchResults).append("<hr/>");
+                $(itemDiv).click(function(){
+                    location.href = $(this).attr("href");
+                })
+            }
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+
+})
+</script>
