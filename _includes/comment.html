@@ -123,9 +123,33 @@ gitment.render('container')
   })
 </script>
 {% endif %}
+{% endif %}
+
+{% if site.comments.valine.enable %}
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<section class="post-footer-item comment">
+  <div id="vcomments"></div>
+</section>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '{{ site.comments.valine.appId }}',
+        appKey: '{{ site.comments.valine.appKey }}',
+        // 评论邮件回复提醒
+        notify:false,
+        // 验证码服务
+        verify:false, 
+        // Gravatar 头像展示方式
+        avatar:'mp', 
+        // 占位提示符
+        placeholder: '在这里写下你的想法吧~' ,
+        meta: ['nick'],
+    })
+</script>
+{% endif %}
+
 {% if site.color-bind.comments %}
 {% include _js/comment.html %}
-{% endif %}
 {% endif %}
 
 {%- endif -%}

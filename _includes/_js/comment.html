@@ -1,71 +1,203 @@
+{% if site.comments.vssue.enable %}
 <script>
     $(function() {
-      
-      $(".vssue :not(.vssue-comment-content) a").css({
-        'color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-status").css({
-        'color': '{{ page-color }}'
-      });
-      $(".vssue .vssue-icon").css({
-        "fill": '{{ page-color }}'
-      });
-      // 监听
-      $("section.comment").on("DOMSubtreeModified", function(){
+      $('head').append("<style>\
+        .vssue :not(.vssue-comment-content) a {\
+          color: {{page-color}};\
+        }\
+      .vssue .vssue-status {\
+          color: {{page-color}};\
+      }\
+      .vssue .vssue-icon {\
+          fill: {{page-color}};\
+      }\
+      .vssue :not(.vssue-comment-content) a {\
+          color: {{page-color}};\
+      }\
+      .vssue .vssue-status {\
+          color: {{page-color}};\
+      }\
+      .vssue .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-reactions .vssue-comment-reaction {\
+          color: {{page-color}};\
+      }\
+      .vssue .vssue-new-comment .vssue-new-comment-input {\
+          background-color: {{page-color}}"+"0D;\
+      }\
+      .vssue .vssue-pagination .vssue-pagination-select {\
+          border-color: {{page-color}};\
+      }\
+      .vssue .vssue-button:not(:disabled).vssue-button-primary {\
+          color: {{page-color}};\
+          border-color: {{page-color}};\
+      }\
+      .vssue .vssue-button {\
+          border-color: {{page-color}};\
+      }\
+      .vssue .vssue-button:disabled {\
+          color: #EAECEF;\
+          border-color: #EAECEF;\
+      }\
+      .vssue .vssue-notice .vssue-progress{\
+          background-color: {{page-color}};\
+      }\
+      .vssue .vssue-notice .vssue-alert {\
+          color: {{page-color}};\
+          border-color: {{-page-color-}}" + "30;\
+          background-color: {{-page-color-}}" + "0D;\
+      }\
+      .vssue .vssue-new-comment .vssue-new-comment-input:focus{\
+          border-color: {{page-color}};\
+          -webkit-box-shadow: 0 0 1px 1px {{ page-color }};\
+          box-shadow: 0 0 1px 1px {{ page-color }};\
+      .vssue .vssue-new-comment .vssue-new-comment-input{\
+          border: 1px solid #eaecef;\
+          -webkit-box-shadow: none;\
+          box-shadow: none;\
+      }\
+      </style>")
+      // $(".vssue :not(.vssue-comment-content) a").css({
+      //   'color': '{{ page-color }}'
+      // });
+      // $(".vssue .vssue-status").css({
+      //   'color': '{{ page-color }}'
+      // });
+      // $(".vssue .vssue-icon").css({
+      //   "fill": '{{ page-color }}'
+      // });
+      // // 监听
+      // $("section.comment").on("DOMSubtreeModified", function(){
   
-        $(".vssue :not(.vssue-comment-content) a").css({
-          'color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-status").css({
-          'color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-icon").css({
-          "fill": '{{ page-color }}'
-        });
-        $(".vssue .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-reactions .vssue-comment-reaction").css({
-          'color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-new-comment .vssue-new-comment-input").css({
-          'background-color': '{{- page-color -}}'+'0D'
-        });
-        $(".vssue .vssue-pagination .vssue-pagination-select").css({
-          'border-color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-button:not(:disabled).vssue-button-primary").css({
-          'color': '{{ page-color }}',
-          'border-color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-button").css({
-          'border-color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-button:disabled").css({
-          // 'cursor': 'not-allowed',
-          'color': '#eaecef',
-          'border-color':' #eaecef'
-        });
-        $(".vssue .vssue-notice .vssue-progress").css({
-          'background-color': '{{ page-color }}'
-        });
-        $(".vssue .vssue-notice .vssue-alert").css({
-          'color': '{{- page-color -}}',
-          'border-color': '{{- page-color -}}' + '30',
-          'background-color': '{{- page-color -}}'+'0D'
-        })
-        $(".vssue .vssue-new-comment .vssue-new-comment-input")
-        .focusin(function(){
-            $(this).css({
-            'border-color': '{{- page-color -}}',
-            '-webkit-box-shadow': '0 0 1px 1px {{- page-color -}}',
-            'box-shadow': '0 0 1px 1px {{- page-color -}}',
-          });
-        })
-        .focusout(function() {
-          $(this).css({
-            'border': '1px solid #eaecef',
-            '-webkit-box-shadow': 'none',
-            'box-shadow': 'none',
-          });
-        });
-      });
+      //   $(".vssue :not(.vssue-comment-content) a").css({
+      //     'color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-status").css({
+      //     'color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-icon").css({
+      //     "fill": '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-comments .vssue-comment .vssue-comment-footer .vssue-comment-reactions .vssue-comment-reaction").css({
+      //     'color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-new-comment .vssue-new-comment-input").css({
+      //     'background-color': '{{- page-color -}}'+'0D'
+      //   });
+      //   $(".vssue .vssue-pagination .vssue-pagination-select").css({
+      //     'border-color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-button:not(:disabled).vssue-button-primary").css({
+      //     'color': '{{ page-color }}',
+      //     'border-color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-button").css({
+      //     'border-color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-button:disabled").css({
+      //     // 'cursor': 'not-allowed',
+      //     'color': '#eaecef',
+      //     'border-color':' #eaecef'
+      //   });
+      //   $(".vssue .vssue-notice .vssue-progress").css({
+      //     'background-color': '{{ page-color }}'
+      //   });
+      //   $(".vssue .vssue-notice .vssue-alert").css({
+      //     'color': '{{- page-color -}}',
+      //     'border-color': '{{- page-color -}}' + '30',
+      //     'background-color': '{{- page-color -}}'+'0D'
+      //   })
+      //   $(".vssue .vssue-new-comment .vssue-new-comment-input")
+      //   .focusin(function(){
+      //       $(this).css({
+      //       'border-color': '{{- page-color -}}',
+      //       '-webkit-box-shadow': '0 0 1px 1px {{- page-color -}}',
+      //       'box-shadow': '0 0 1px 1px {{- page-color -}}',
+      //     });
+      //   })
+      //   .focusout(function() {
+      //     $(this).css({
+      //       'border': '1px solid #eaecef',
+      //       '-webkit-box-shadow': 'none',
+      //       'box-shadow': 'none',
+      //     });
+      //   });
+      // });
     })
   </script>
+{% endif %}
+
+{% if site.comments.valine.enable %}
+<script>
+  $(function() {
+    $("head").append("<style>\
+      .v .vlist .vcard .vhead .vnick::before{\
+        background:{{page-color}}; \
+      }\
+      .v .vwrap .vheader .vinput:focus{\
+        border-bottom-color: {{ page-color }};\
+      }\
+      .v .vlist .vcard .vhead .vnick {\
+        color: {{ page-color }}\
+      }\
+      .v .vlist .vcard .vhead .vnick:hover {\
+        color: {{ page-color }}\
+      }\
+      .v .vlist .vcard .vh .vmeta .vat{\
+        color: {{ page-color }}\
+      }\
+      .v .veditor{\
+        background-color: {{page-color}}"+"0D;\
+        border-radius: 5px;\
+        border: 1px solid #eaecef;\
+        -webkit-box-shadow: none;\
+        box-shadow: none;\
+      }\
+      .v .veditor:focus{\
+      border-color: {{- page-color -}};\
+      -webkit-box-shadow: 0 0 1px 1px {{- page-color -}};\
+      box-shadow: 0 0 1px 1px {{- page-color -}};\
+      }\
+      .v .vbtn{\
+        border-color: {{page-color}};\
+        background-color: transparent;\
+        color: {{page-color}};\
+      }\
+      </style>");
+
+    // 监听
+    // $("section.comment").on("DOMSubtreeModified", function(){
+
+      // $(".v .veditor").css({
+      //   'background-color': '{{- page-color -}}'+'0D',
+      //   'border-radius': '5px'
+      // });
+      // $(".v .vbtn").css({
+      //   'border-color': '{{ page-color }}',
+      //   'background-color': 'transparent',
+      //   'color': '{{ page-color }}'
+      // });
+      // $(".v .vbtn").css({
+      //   // 'cursor': 'not-allowed',
+      //   'color': '#eaecef',
+      //   'border-color':' #eaecef'
+      // });
+
+    //   $(".v .veditor")
+    //   .focusin(function(){
+    //       $(this).css({
+    //       'border-color': '{{- page-color -}}',
+    //       '-webkit-box-shadow': '0 0 1px 1px {{- page-color -}}',
+    //       'box-shadow': '0 0 1px 1px {{- page-color -}}',
+    //     });
+    //   })
+    //   .focusout(function() {
+    //     $(this).css({
+    //       'border': '1px solid #eaecef',
+    //       '-webkit-box-shadow': 'none',
+    //       'box-shadow': 'none',
+    //     });
+    //   });
+    // });
+    // $('.vemoji-btn').append('{{site.emoji}}');
+  })
+</script>
+{% endif %}

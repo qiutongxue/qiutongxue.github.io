@@ -28,18 +28,19 @@ aboutyou: '大家好，欢迎来到我的个人博客，可以通过下方的渠
 portraits: '/assets/profile.jpg' # your portraits image file path
 
 # 图标库（iconfont）
-icon-source: '//at.alicdn.com/t/font_1568694_cvp1awb4z75.css'
+icon-source: '//at.alicdn.com/t/font_1568694_m54jvcfxsa8.css'
 total-words-before: '<i class="iconfont icon-text"></i>'    #文章字数前缀
 total-words-after: '字'       #文章字数后缀
 time-to-read-before: '<i class="iconfont icon-time"></i>'     #预计阅读时间前缀
 time-to-read-after: '分钟'    #预计阅读时间后缀
 post-pv-before: '<i class="iconfont icon-view"></i>'        #浏览量前缀
 post-pv-after: ''       #浏览量后缀
+emoji: '<i class="iconfont icon-emoji"></i>'
 
 # SNS
 SNS: true
 # SNS图标地址（iconfont）
-SNS-source: '//at.alicdn.com/t/font_1563017_c9npfhfwibm.js'
+SNS-source: '//at.alicdn.com/t/font_1563017_jpbollee9fg.js'
 SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','neteaseCloudMusic','Facebook','instagram', ]
   mail: '###'
   weixin: '###' # 你的微信二维码存放的地址
@@ -50,6 +51,7 @@ SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','
   neteaseCloudMusic: 'https://music.163.com/#/user/home?id=269757591'
   zhihu: 'https://www.zhihu.com/'
   steam: 'https://steamcommunity.com/'
+  gitee: 'http://qiutongxue.gitee.io/'
   # RSS: '/feed.xml'
   # bilitv: '' #小电视形态
   # instagram: ''
@@ -120,7 +122,7 @@ comments:
     client_secret: '479b8271851db1055103d3edef0beaedc00ad644'  # 注册 OAuth Application 后获得的 client_secret
 #Vssue评论，也是OAuth Application，相应配置与Gitment相同，就不赘述了
   vssue: 
-    enable: true
+    enable: false
     type: 'github' # 可用： github、gitee
     # 如果抽取出来。下面两个中只保留一个
     # 下面是github配置
@@ -133,6 +135,11 @@ comments:
     Gitee_repo: 'comments-repository'
     Gitee_client_id: '38a30648559e1a52ba71d90691e64a296b509615796884b7e97abb78b0bb4e6a'
     Gitee_client_secret: '6755c77c8a4cc2cc0e223051aa7ff50bcbb9a29e04a8dd60cc43958ebf8b3fa9'
+  
+  valine:
+    enable: true
+    appId: DABE2iYCIJ9y6PQ0ffnfkIug-gzGzoHsz
+    appKey: XCYilVAul18HQgTyghVbAWXl
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
 social-share: false
@@ -150,7 +157,7 @@ color-bind:
   index: false    # false时默认为灰色
   timeline: true  # fasle时默认为紫色
   tags: true      # false时默认按顺序： 蓝-紫-红-黄
-  comments: true  # false时默认为浅绿色
+  comments: true  # false时默认为浅绿色(Vssue)
 # 颜色库，博客文章的背景颜色根据【index = 字数 modulo 库颜色数量】从中获取相应的颜色，十六进制颜色需要用【双引号】包裹
 page-color: 
   - "#9A85FF"  #紫
