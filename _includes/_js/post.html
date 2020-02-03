@@ -123,6 +123,7 @@
     }
 </script>
 
+<!-- 插入视频窗口控制 -->
 <script>
     $(function() {
         var width = $("iframe").width();
@@ -133,4 +134,13 @@
             'height': height
         })
     });
+</script>
+
+<!-- 超链接新窗口打开 -->
+<script>
+    $(function() {
+        $("a[href^='http']").each(function() {
+            $(this).attr("target", "_blank");
+        })
+    })
 </script>
