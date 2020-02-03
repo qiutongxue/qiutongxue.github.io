@@ -161,43 +161,14 @@
         background-color: transparent;\
         color: {{page-color}};\
       }\
+      .v .vbtn:hover{\
+        border-color: {{ page-color }};\
+        color: white;\
+        background-color: {{page-color}}"+"AA;\
+      }\
       </style>");
 
-    // 监听
-    // $("section.comment").on("DOMSubtreeModified", function(){
-
-      // $(".v .veditor").css({
-      //   'background-color': '{{- page-color -}}'+'0D',
-      //   'border-radius': '5px'
-      // });
-      // $(".v .vbtn").css({
-      //   'border-color': '{{ page-color }}',
-      //   'background-color': 'transparent',
-      //   'color': '{{ page-color }}'
-      // });
-      // $(".v .vbtn").css({
-      //   // 'cursor': 'not-allowed',
-      //   'color': '#eaecef',
-      //   'border-color':' #eaecef'
-      // });
-
-    //   $(".v .veditor")
-    //   .focusin(function(){
-    //       $(this).css({
-    //       'border-color': '{{- page-color -}}',
-    //       '-webkit-box-shadow': '0 0 1px 1px {{- page-color -}}',
-    //       'box-shadow': '0 0 1px 1px {{- page-color -}}',
-    //     });
-    //   })
-    //   .focusout(function() {
-    //     $(this).css({
-    //       'border': '1px solid #eaecef',
-    //       '-webkit-box-shadow': 'none',
-    //       'box-shadow': 'none',
-    //     });
-    //   });
-    // });
-    // $('.vemoji-btn').append('{{site.emoji}}');
+  
   })
 </script>
 {% endif %}
