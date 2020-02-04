@@ -10,4 +10,12 @@
         top: unset;
         left: 10px;
     }
+
+    .post-title-tags {
+        top: 20%;
+    }
+    .post-titlearea span:first-child {
+        top: 30px;
+    }
 }
+

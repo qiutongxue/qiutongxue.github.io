@@ -127,9 +127,9 @@
 <script>
     $(function() {
         var width = $("iframe").width();
-        console.log(width);
+        // console.log(width);
         var height = width * 9 / 16;
-        console.log(height);
+        // console.log(height);
         $("iframe").css({
             'height': height
         })
@@ -142,5 +142,38 @@
         $("a[href^='http']").each(function() {
             $(this).attr("target", "_blank");
         })
+    })
+</script>
+
+<!-- 锚点过度动画 -->
+<script>
+    // $(function(){
+    //     $("a.gototop").click(function(){
+    //         $("html,body").animate({
+    //             scrollTop:$("#htmlup").offset().top
+    //         },1000)
+    //     })
+    //     $("a.gotobottom").click(function() {
+    //         $("html,body").animate({
+    //             scrollTop:$('#htmldown').offset().top
+    //         },1000)
+    //     })
+    // })
+    $(function(){   
+        $('a[href*="#"]').click(function() { 
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) { 
+                // console.log($(this.hash));
+                // hash表示的是#号
+                var $target = $(this.hash); 
+                $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']'); 
+                if ($target.length) { 
+                    var targetOffset = $target.offset().top; 
+                    $('html,body').animate({ 
+                        scrollTop: targetOffset 
+                    }, 1000); 
+                    return false; 
+                } 
+            } 
+        }); 
     })
 </script>

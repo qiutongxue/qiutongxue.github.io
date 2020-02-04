@@ -283,3 +283,22 @@ iframe {
 .post-header-search .search .search-input::placeholder{
     color: rgba(255, 255, 255, 0.76);
 }
+
+.post-title-tags {
+    position: relative;
+    top: 30%;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.post-title-tags li {
+    display: inline-block;
+    border: 3px dashed white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.post-title-tags a {
+    color: white;
+}

@@ -11,8 +11,24 @@
   </div>
   <div class="post-titlearea">
     <span class="wow fadeInUp" data-wow-delay="0.2s">{{ page.title }}</span>
-    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s">{{ page.description }}</span> -->
-    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</span> -->
+    
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s">{{ page.description }}</span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</span> -->
+    <div class="post-title-tags wow fadeInUp" data-wow-delay="0.6s">
+      
+      <ul>
+        {% for tag in page.tags %}
+        <a href="/tags.html#{{tag}}" target="_blank">
+          <li>
+            {{tag}}
+          </li>
+          </a>
+
+        {% endfor %}
+      </ul>
+      
+      
+    </div>
   </div>
   <div class="right-area">
     {% if page.previous.url %}
