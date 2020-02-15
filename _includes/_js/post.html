@@ -161,10 +161,11 @@
     // })
     $(function(){   
         $('a[href*="#"]').click(function() { 
+            
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) { 
-                // console.log($(this.hash));
                 // hash表示的是#号
-                var $target = $(this.hash); 
+                // decodeURI 解决中文编码问题
+                var $target = $(decodeURI(this.hash)); 
                 $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']'); 
                 if ($target.length) { 
                     var targetOffset = $target.offset().top; 

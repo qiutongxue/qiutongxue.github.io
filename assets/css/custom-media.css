@@ -17,5 +17,12 @@
     .post-titlearea span:first-child {
         top: 30px;
     }
+
+}
+@media screen and ( max-width : 465px ){
+
+    .toc-div {
+        width: 65%;
+    }
 }
 

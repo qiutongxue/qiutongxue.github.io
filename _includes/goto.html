@@ -1,12 +1,73 @@
 <div class="bounceInRight animated go">
+  
   <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
     <div class="box" style="font-family:'ffad_matroregular';">
         Top
     </div>
   </a>
-  <a title="底部有{% if site.disqus %}disqus{% endif %}{% if site.livere %}livere{% endif %}{% if site.Gitment %}Gitment{% endif %}评论哦" class="gotobottom" href="#htmldown" target="_self">
+  <div class="box show-toc">
+    <i class="iconfont icon-mulu"></i>
+  </div>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
     <div class="box" style="font-family:'ffad_matroregular';">
         Foot
     </div>
   </a>
+  <div class="toc-div">
+    <div class="toc-title">
+      {{ page.title }}
+    </div>
+
+    <div class="toc-content">
+  
+    </div>
+  </div>
 </div>
+
+<script>
+  var stack = [];
+  var toc = "";
+  var isDisplayed = false;
+  $("h1,h2,h3,h4").each(function() {
+    var tagName = $(this)[0].tagName;
+    var level = parseInt(tagName.substring(1));
+    toc += "<span class='toc-content-list toc-" + tagName.toLowerCase() +"'>" ;
+    while(--level > 0) {
+      toc += "&emsp;&emsp;";
+    }
+    toc += "<i class='iconfont icon-lolipop' style='font-size:10px'></i> " + "<a href='#" + $(this).attr("id") + "'>" + $(this).text()+"</a>" + "</span>";
+
+  })
+  if (toc == "") {
+    toc = "<span class='toc-content-list' style='text-align:center;'>本文章没有分级目录哦</span>"
+  }
+  $(".toc-content").html(toc);
+
+  $(".show-toc").click(function() {
+    if(!isDisplayed) {
+
+      $(".toc-div").show().animate({
+        'right': '0px'
+      }, 1000)
+    }
+
+  })
+  
+  $(document).click(function(e) {
+    if(!$(e.target).closest(".toc-div,.show-toc").length) {
+      $(".toc-div").animate({
+        'right': '-310px'
+      },1000).hide(1);
+      isDisplayed = false;
+      // return false;
+    }
+  })
+
+  $(".toc-content-list a").click(function() {
+    $(".toc-div").animate({
+        'right': '-310px'
+      },1000).hide(1);
+    isDisplayed = false;
+    return false;
+  })
+</script>
