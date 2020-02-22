@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Hello Everyone, Welcome to my BLOGGGGGGGGG~
-categories: 杂文
+title: Hello Everyone, Welcome to my BLOGGGG~
 tags: 
     - 置顶
     - 博客开通啦
 subtitle: 这是一篇置顶文章哦
 sticky: true
+
 ---
 
 > 如果要给美好的人生一个定义，那就是惬意，如果要给惬意一个定义，那就是三五知己，谈笑风生。 ————刘瑜《送你一颗子弹》
@@ -29,6 +29,8 @@ sticky: true
 - [x] 为主页中展示的文章增加上浮小动画 [[cancel]]
 - [x] 在文章页中显示tags（但是纠结于该放在标题处，还是放在文章末尾）[[2020-2-4]]
 - [ ] 添加更新时间（区别于创建时间）
+- [ ] tags页分类可折叠
+- [ ] 建立专有名词库
 
 长期计划：
 
