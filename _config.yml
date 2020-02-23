@@ -70,7 +70,8 @@ social_mail:
 SNS-qrcode:
   weixin: true
   qq: true
-# 分页
+
+  # 分页
 paginate: 10
 paginatepath: ['page:num']
 
@@ -159,27 +160,7 @@ color-bind:
   tags: true      # false时默认按顺序： 蓝-紫-红-黄
   comments: true  # false时默认为浅绿色(Vssue)
 # 颜色库，博客文章的背景颜色根据【index = 字数 modulo 库颜色数量】从中获取相应的颜色，十六进制颜色需要用【双引号】包裹
-page-color: 
-  - "#9A85FF"  #紫
-  - "#FF5A5A"  #红
-  - "#FFD220"  #黄
-  - "#62AAFF"  #蓝
-  - "#78D2F1"  #蓝
-  - "#00E673"  #绿
-  - "#FF9F38"  #橙
-  - "#FF99CB"  #粉红
-  - "#BA99FF"  #紫
-  - "#9A9A9A"  #灰
-  - "#46E595"  #绿
-  - "#FF6200"  #橙红
-  - "#FF9700"  #橙
-  - "#FB7299"  #Bilibili粉
-  - "#20E3C9"  #青色
-  - "#82C8A0"  #green
-  - "#7fccde"  #cyan
-  - "#6698cb"  #blue
-  - "#cb99c5"  #紫色
-  - "#fa5a5a"  #红色
+
   
 search: true
   

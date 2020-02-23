@@ -1,9 +1,5 @@
 {%- assign content-size = post.content | strip_html | strip_newlines | remove: " " | size -%}
-    {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
-    {%- assign page-color = site.page-color[color-num] -%}
-    {%- if post.color.size > 0 -%}
-        {% assign page-color = post.color %}
-    {%- endif -%}
+    {% include _helper/color.html %}
 <a href="{{ post.url }}">
     
     <li class="fadeInUp animated" color="{{page-color}}">

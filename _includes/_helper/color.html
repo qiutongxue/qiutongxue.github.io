@@ -1,0 +1,17 @@
+{% if page.layout == "post" %}
+
+{%- assign color-num = page.content.size | modulo: site.data.color.page-color.size -%}
+{%- assign page-color = site.data.color.page-color[color-num] -%}
+{%- if page.color.size > 0 -%}
+  {% assign page-color = page.color %}
+{%- endif -%}
+
+{% else %}
+
+{%- assign color-num = post.content.size | modulo: site.data.color.page-color.size -%}
+{%- assign page-color = site.data.color.page-color[color-num] -%}
+{%- if post.color.size > 0 -%}
+  {% assign page-color = post.color %}
+{%- endif -%}
+
+{% endif %}

@@ -22,11 +22,7 @@ description:
         <li>
             <span class="tag-name" id="{{ tag[0] }}">「{{ tag[0] }}」</span>
             {% for post in tag[1] %}
-            {%- assign color-num = post.content.size | modulo: site.page-color.size -%}
-            {%- assign page-color = site.page-color[color-num] -%}
-            {%- if post.color.size > 0 -%}
-                {% assign page-color = post.color %}
-            {%- endif -%}
+            {% include _helper/color.html %}
             <a class="tag-post" color="{{page-color}}" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             {% endfor %}
         </li>

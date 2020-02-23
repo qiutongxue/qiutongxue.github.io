@@ -9,15 +9,10 @@
 </head>
 <body>
 <!-- 默认根据文章字数选择颜色，页面中设置的颜色优先 -->
-{% comment %}
-{%- assign number = page.date | date: "%s" | divided_by: 100 | modulo: site.page-color.size -%}
-{% endcomment %}
+
 {%- assign content-size = page.content | strip_html | strip_newlines | remove: " " | size -%}
-{%- assign color-num = page.content.size | modulo: site.page-color.size -%}
-{%- assign page-color = site.page-color[color-num] -%}
-{%- if page.color.size > 0 -%}
-  {% assign page-color = page.color %}
-{%- endif -%}
+
+{% include _helper/color.html %}
 <!-- 顶部锚点 -->
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
