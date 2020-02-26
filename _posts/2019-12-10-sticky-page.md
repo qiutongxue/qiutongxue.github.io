@@ -3,7 +3,6 @@ layout: post
 title: Hello Everyone, Welcome to my BLOGGGG~
 tags: 
     - 置顶
-    - 博客开通啦
 subtitle: 这是一篇置顶文章哦
 sticky: true
 category: public
