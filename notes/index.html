@@ -1,0 +1,49 @@
+---
+layout: note
+title: 笔记大本营
+---
+
+    <div id="fullpage">
+        <div class="section first-div" data-tooltip="">
+            <h1>
+                WOW!!被你发现了!!
+            </h1>
+            <h2>往下划划看</h2>
+        </div>
+    
+    
+        {% for note in site.data.note.note %}
+        
+        <div class="section note-list" data-tooltip="{{note.name}}" style="background-color: {{note.color}};">
+            <div class="note-icon-div">
+                <a href="{{note.url}}">
+                <!-- <i class="iconfont {{note.icon}}"></i> -->
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#{{note.icon}}"></use>
+                </svg>
+                </a>
+            </div>
+                
+            
+            <div class="note-name">{{ note.name }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+
+<script>
+    $(document).ready(function() {
+	$('#fullpage').fullpage({
+		//options here
+		autoScrolling:true,
+        scrollHorizontally: true,
+        navigation: true,
+        navigationPosition: 'right',
+        continuousVertical: true
+	});
+
+	//methods
+	$.fn.fullpage.setAllowScrolling(true);
+});
+</script>

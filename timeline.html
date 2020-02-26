@@ -13,7 +13,7 @@ description:
 
     <ul class="ex-list">
         <li  class="fadeInUp animated" id="pc">
-          {% for post in site.posts %}
+          {% for post in site.categories.public %}
             {%- if site.color-bind.timeline -%}
               
               {% include _helper/color.html %}
@@ -40,7 +40,7 @@ description:
         </li>
 
         <li  class="fadeInUp animated" id="media">
-          {% for post in site.posts %}
+          {% for post in site.categories.public %}
             <div class="timeANDname">
               <a href="{{ post.url }}"><span class="timeANDname-san"></span><span class="timeANDname-main"><sapn class="timeANDnamemain">
                   {{ post.title }}

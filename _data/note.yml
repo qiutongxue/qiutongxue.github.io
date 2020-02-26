@@ -1,0 +1,27 @@
+icon-src: //at.alicdn.com/t/font_1654840_tz6kvvulgu.js
+note:
+  - 
+    name: 计算机网络
+    icon: icon-network
+    url: computer-network
+    color: '#F1F2B8'
+  -
+    name: Spring
+    icon: icon-spring
+    url: '#'
+    color: '#DAECB4'
+  - 
+    name: 数据结构与算法
+    icon: icon-algorithm
+    url: '#'
+    color: '#B0D7E7'
+  - 
+    name: Leetcode
+    icon: icon-leetcode
+    url: '#'
+    color: white
+  -
+    name: SpringBoot
+    icon: icon-spring-boot
+    url: '#'
+    color: '#88DCAE' 

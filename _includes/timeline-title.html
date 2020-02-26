@@ -6,5 +6,5 @@
 <!-- 替换 %d 中的数字 -->
 <script>
     var counter = document.getElementById("page-counter");
-    counter.innerText = counter.innerText.replace("%d", "{{ site.posts.size }}");
+    counter.innerText = counter.innerText.replace("%d", "{{ site.categories.public.size }}");
 </script>

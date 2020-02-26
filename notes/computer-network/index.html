@@ -1,0 +1,66 @@
+---
+layout: note
+title: 笔记-计算机网络
+---
+<div id="back-to-index">
+    <a href="/notes">
+        <i class="iconfont icon-back" style="font-size: 3em;"></i>
+    </a>
+</div>
+<div id="fullpage">
+    <div class="section" style="background-color: azure;">
+        
+        {% for tag in site.tags %}
+        {% if tag[0] == "计算机网络" %}
+        {% for post in tag[1] %}    
+        <div class="slide">
+            <div class="note-icon-div">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-note"></use>
+                </svg>
+            </div>
+            <div class="note-name">
+                <a href="{{post.url}}">
+                    {{post.title}}
+                </a>
+
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    
+</div>
+
+
+<script>
+    $(document).ready(function() {
+	$('#fullpage').fullpage({
+		//options here
+		autoScrolling:true,
+        scrollHorizontally: true,
+        slidesNavigation: true,
+
+	});
+
+	//methods
+	$.fn.fullpage.setAllowScrolling(true);
+});
+</script>
+
+
+<script>
+    $(function() {
+        $('head').append("<style> \
+        .fp-controlArrow.fp-prev{\
+            border-color: transparent #333 transparent transparent\
+        } \
+        .fp-controlArrow.fp-next{\
+            border-color: transparent transparent transparent #333\
+        } \
+        </style>")
+    })
+</script>
+

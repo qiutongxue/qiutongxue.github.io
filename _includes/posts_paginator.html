@@ -1,20 +1,22 @@
 
-<!-- 置顶 -->
-{% for post in paginator.posts %}
-{% if post.sticky %}
 
+{% if paginator.page == 1 %}
+
+{% for post in site.categories.public %}
+{% if post.sticky %}
+<!-- 置顶 -->
 {% include _helper/post-paginator.html %}
 
 {% endif %}
 {% endfor %}
-
+{% endif %}
 
 {% for post in paginator.posts %}
 
 {% assign paths =  post.path | split:"/" %}
 {% if paths[0] == "_posts" %}
 
-{% if paginator.page > 1 or post.sticky == nil or post.sticky.size == 0 %}
+{% if post.sticky == nil or post.sticky.size == 0 %}
 
 {% include _helper/post-paginator.html %}
 
