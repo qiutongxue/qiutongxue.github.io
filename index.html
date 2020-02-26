@@ -35,3 +35,28 @@ description: 努力实现新功能中...
   })
 </script>
 {%- endif -%}
+<script>
+  $(function() {
+    var spsCnt = 0;
+    $("#surprise-trigger").click(function() {
+      spsCnt++;
+      // console.log(spsCnt);
+      switch(spsCnt) {
+        case 5: $(this).text('你点我干什么？');break;
+        case 6: $(this).text('你点我干什么！');break;
+        case 7: $(this).html('呜呜呜别点了'); break;
+        case 8: $(this).text('都说了别点辣'); break;
+        case 9: $(this).text('最后一次警告！'); break;
+        case 10: $(this).html('<svg class="icon" aria-hidden="true"><use xlink:href="#icon-baoxiang"></use></svg>'); break;
+        
+        case 11: $(this).attr('href', '/notes'); break;
+        default: break;
+      }
+      
+    });
+
+    
+
+    
+  })
+</script>

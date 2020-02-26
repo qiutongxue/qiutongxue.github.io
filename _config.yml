@@ -40,7 +40,7 @@ emoji: '<i class="iconfont icon-emoji"></i>'
 # SNS
 SNS: true
 # SNS图标地址（iconfont）
-SNS-source: '//at.alicdn.com/t/font_1563017_jpbollee9fg.js'
+SNS-source: '//at.alicdn.com/t/font_1563017_y8qm55gi2oa.js'
 SNS-icon: #['weibo', 'qq', 'github', 'weixin', 'codepen', 'bilibili', 'bilitv','neteaseCloudMusic','Facebook','instagram', ]
   mail: '###'
   weixin: '###' # 你的微信二维码存放的地址
