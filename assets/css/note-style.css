@@ -39,3 +39,31 @@ a {
     left: 30px;
     z-index: 10;
 }
+.tags-trigger {
+    text-align: center;
+    /* margin-top: 30px; */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tags-trigger .icon {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.tips-div {
+    
+    /* border: 1px solid; */
+    width: auto;
+    text-align: center;
+}
+
+.tip {
+    display: inline-block;
+    border-radius: 10px;
+    border: 5px solid #e7eaf1;
+    padding: 5px 10px;
+    margin: 10px;
+    color: #6d6e6e;
+    font-size: 14px;
+}

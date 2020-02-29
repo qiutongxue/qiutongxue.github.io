@@ -28,7 +28,7 @@ aboutyou: '大家好，欢迎来到我的个人博客，可以通过下方的渠
 portraits: '/assets/profile.jpg' # your portraits image file path
 
 # 图标库（iconfont）
-icon-source: '//at.alicdn.com/t/font_1568694_at2nb3mp7h.css'
+icon-source: '//at.alicdn.com/t/font_1568694_x0y0izdqw9i.css'
 total-words-before: '<i class="iconfont icon-text"></i>'    #文章字数前缀
 total-words-after: '字'       #文章字数后缀
 time-to-read-before: '<i class="iconfont icon-time"></i>'     #预计阅读时间前缀

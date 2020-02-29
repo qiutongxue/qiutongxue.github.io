@@ -10,24 +10,37 @@ title: 笔记-计算机网络
 <div id="fullpage">
     <div class="section" style="background-color: azure;">
         
-        {% for tag in site.tags %}
-        {% if tag[0] == "计算机网络" %}
-        {% for post in tag[1] %}    
+        {% assign notes = site.tags['计算机网络'] %}
+
+        {% for post in notes %}    
         <div class="slide">
             <div class="note-icon-div">
+                <a href="{{post.url}}">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-note"></use>
                 </svg>
+            </a>
             </div>
             <div class="note-name">
-                <a href="{{post.url}}">
+                
                     {{post.title}}
-                </a>
 
             </div>
+            
+
+            <div class="tips-div">
+                <!-- <div class="tags-trigger">
+                    <svg class="icon tag-icon" aria-hidden="true">
+                        <use xlink:href="#icon-tags"></use>
+                    </svg>
+                </div> -->
+                {% for tip in post.tips %}
+                <div class="tip">
+                    <i class="iconfont icon-tag" style="margin-right: 3px;"></i><span>{{ tip }}</span>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-        {% endif %}
         {% endfor %}
 
     </div>
