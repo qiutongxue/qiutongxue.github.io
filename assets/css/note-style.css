@@ -8,7 +8,7 @@
 
 a {
     text-decoration: none;
-    color: #333;
+    /* color: #333; */
 }
 
 .icon {
@@ -47,6 +47,10 @@ a {
     z-index: 10;
 }
 
+#back-to-index a{
+    color: #333;
+}
+
 .tags-trigger {
     text-align: center;
     /* margin-top: 30px; */
@@ -65,8 +69,6 @@ a {
     width: auto;
     text-align: center;
 }
-
-
 
 .tip {
     cursor: default;
@@ -190,3 +192,26 @@ a {
     right: 5px;
     font-size: 12px;
 }
+
+#first-section a {
+    padding: 10px;
+    border: 1px solid  #e7eaf1;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+}
+
+/* #first-section a{
+    color: white;
+} */
+
+#first-section a:hover{
+    background-color: #e7eaf1;
+    color: #333;
+    font-weight: bold;
+}
+
+/* .home-page-link a:hover{
+    color: #333;
+
+} */
