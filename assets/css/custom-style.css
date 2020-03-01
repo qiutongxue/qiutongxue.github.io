@@ -224,11 +224,25 @@ iframe {
     width: 200px;
     border: 1px solid rgba(0, 0, 0, .1);
     background: 0 0;
+    transition-duration: .5s;
 }
 
 .search-input:hover {
     border-color: #333;
+    
+    /* animation: searchColorTransform 0.5s ;
+    animation-fill-mode: forwards;
+    animation-duration: 1s; */
 }
+
+/* @keyframes searchColorTransform {
+    from {
+        border-color:  rgba(0, 0, 0, .1);
+    }
+    to {
+        border-color: #333;
+    }
+} */
 
 .search-input:focus{
     border-color: #333;

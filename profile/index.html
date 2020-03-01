@@ -1,0 +1,180 @@
+---
+layout: note
+self-name: 邱柏威
+introduction: 不想当程序员的机械工程师不是好学生
+title: 个人简介
+---
+
+<div id="fullpage">
+    <!-- 首页，名字 -->
+    <div class="section" id="first-section">
+        <div id="profile-tip">* 使用电脑浏览体验更佳</div>
+        <div id="profile-self-name" >
+            {{ page.self-name }}
+        </div>
+        <div id="profile-introduction">
+            {{ page.introduction }}
+        </div>
+    </div>
+
+    <!-- 学校 -->
+    <div class="section" style="background: linear-gradient(135deg, #f05053, #e1eec3);">
+        <div class="half-div half-text">
+
+            <div class="head-title">四川大学 <span>本科</span></div>
+            <div class="second-title"> <span>机械工程学院</span> <br/> <span style="font-size: 25px;">机械设计制造及其自动化</span></div>
+            <!-- <div class="third-title">机械设计制造及其自动化</div> -->
+    
+            <div class="section-content">
+                <span class="section-content-head">荣誉奖项：</span>
+                <ali>四川大学校综合奖学金（2016-2017、2018-2019）</ali>
+                <ali>四川大学校单项奖学金（2017-2018）</ali>
+                <ali>四川大学优秀学生</ali>
+                <ali>四川大学2020届校优秀毕业生</ali>
+            </div>
+
+            <div class="section-content">
+                <span class="section-content-head">自学课程：</span>
+                计算机组成原理、计算机网络、数据结构与算法
+            </div>
+        </div>
+        <div class="half-div half-img">
+            <img data-src="/assets/images/profile/SCU.png" width="100%" height="auto" alt="" />
+        </div>
+    </div>
+
+    <div class="section" style="background: linear-gradient(#0F2027,#203A43,#2C5364);">
+        <div class="half-div half-text">
+            <div class="head-title">
+                大学生创新创业训练计划
+            </div>
+            <div class="second-title">
+                基于脑电信号的可穿戴式疲劳驾驶智能预警系统
+            </div>
+            <div class="section-content">
+                省级项目。通过 TGAM 模块采集脑电信号，利用蓝牙模块传输到单片机中，验证小波变换特征提取，根据功率谱变化特性指标判断做出预警提示。
+            </div>
+            <div class="section-content">
+                作为项目核心成员，参与项目答辩、电气元件采购，同时负责基于 Arduino 单片机的报警功能的实现。
+            </div>
+        </div>
+    </div>
+
+    <!-- 最后一页，技能树 -->
+    <div class="section ">
+        <div class="head-title">
+            编程语言
+        </div>
+        <div class="skill-div">
+            <div class="canvas-div">
+                <canvas id="javaSkill" chart-title='Java' skill='0.5' class="chart-canvas" chart-bgcolor="#AFD2E8"></canvas>
+            </div>
+            <div class="canvas-div">
+                <canvas id="pythonSkill" chart-title='Python' skill='0.4' class="chart-canvas" chart-bgcolor="#AFD2E8"></canvas>
+            </div>
+            <div class="canvas-div">
+                <canvas id="JsSkill" chart-title="JavaScript(JQuery)" skill='0.4' chart-bgcolor="#AFD2E8"></canvas>
+            </div>
+            <div class="canvas-div">
+                <canvas id="CSkill" chart-title="C" skill='0.3' chart-bgcolor="#AFD2E8"></canvas>
+            </div>
+        </div>
+            
+        <div class="head-title">
+            框架类
+        </div>
+        <div class="skill-div">
+            <div class="canvas-div">
+                <canvas id="SpringSkill" chart-title="Spring" skill='0.4' chart-bgcolor="#E7A567"></canvas>
+            </div>
+            <div class="canvas-div">
+                <canvas id="MybatisSkill" chart-title="Mybatis" skill='0.4' chart-bgcolor="#E7A567"></canvas>
+            </div>
+            <div class="canvas-div">
+                <canvas id="SpringBootSkill" chart-title="Spring-Boot" skill='0.3' chart-bgcolor="#E7A567"></canvas>
+            </div>
+        </div>
+        <!-- <div class="head-title">
+            证书
+        </div> -->
+        <div class="certification-div">
+            <i class="iconfont icon-certification" ></i> College English Test Band 6 - 533
+            <br />
+            <i class="iconfont icon-certification" ></i> 全国计算机等级考试二级（C语言）- 良好
+
+        </div>
+    </div>
+
+        <!-- 页脚，联系方式等，黑色底 -->
+    <div class="section fp-auto-height" id="profile-footer">
+        <div class="one-third-div">
+            <i class="iconfont icon-phoneNumebr"></i>
+            (+86) 177-9641-0279
+        </div>
+        <div class="one-third-div">
+            <i class="iconfont icon-location"></i>
+            四川省 成都市 一环路南一段 24 号 <br/> 邮编：610065
+        </div>
+        <div class="one-third-div">
+            <a href="https://qiutongxue.gitee.io" style="color: white;">
+                <i class="iconfont icon-homePage"></i>
+                qiutongxue.gitee.io
+            </a>
+        </div>
+    </div>
+</div>
+    
+
+<script>
+    $('canvas').each(function() {
+        var title = $(this).attr('chart-title');
+        var skill = Number($(this).attr('skill'));
+        var bgcolor = $(this).attr('chart-bgcolor');
+        var data = {
+            labels: ['熟练', '不熟练'],
+            datasets: [{
+                label: '熟练度',
+                data: [skill, 1-skill],
+                backgroundColor: [
+                    bgcolor,
+                    '#FFFFFF'
+                ],
+                borderColor: '#eee'
+            }]
+        }
+        var options = {
+            title: {
+                display: true,
+                text: title,
+            },
+            legend: {
+                display: false
+            }
+        }
+        new Chart($(this), {
+            type: 'doughnut',
+            data: data,
+            options: options
+        })
+    })
+</script>
+
+
+
+<script>
+
+    $(document).ready(function() {
+	$('#fullpage').fullpage({
+		//options here
+		autoScrolling:true,
+        scrollHorizontally: true,
+        navigation: true,
+        // scrollBar: true,
+        // touchSensitivity: 20,
+	});
+
+	//methods
+	$.fn.fullpage.setAllowScrolling(true);
+});
+
+</script>

@@ -1,0 +1,68 @@
+@media screen and ( max-width : 767px ) {
+    .half-div {
+        height: 50%;
+        width: auto;
+        flex-direction: column;
+
+    }
+
+    .head-title {
+        margin-top: 40px;
+        font-size: 35px;
+    }
+
+    .second-title {
+        font-size: 25px;
+    }
+
+    #first-section {
+        background-size: auto 100% ;
+        background-repeat: no-repeat;
+    }
+
+    .seconde-title span{
+        line-height: 1;
+    }
+
+    .section-content {
+        margin: 10px 45px;
+        font-size: 14px;
+    }
+
+    .section-content-head {
+        font-size: 18px;
+    }
+
+    .half-img img {
+        position: relative;
+        top: 60px;
+    }
+
+    .canvas-div {
+        margin: 0;
+        width: 150px;
+    }
+
+    .skill-div {
+        text-align: left;
+    }
+
+    .certification-div {
+        font-size: 16px;
+    }
+
+    .certification-div .iconfont {
+        font-size: 16px;
+    }
+    #profile-footer {
+        padding-bottom: 20px;
+    }
+
+    .one-third-div {
+        font-size: 16px;
+        width: 100%;
+        display: block;
+        padding: 10px;
+
+    }
+}

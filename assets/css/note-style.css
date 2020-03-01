@@ -1,22 +1,29 @@
 #fullpage {
     font-size: 20px;
 }
+
+* {
+    font-family: 'hanyijiashu', 'Mplus1P', sans-serif;
+}
+
 a {
     text-decoration: none;
     color: #333;
 }
 
 .icon {
-    width: 10em; height: 10em;
+    width: 10em;
+    height: 10em;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
     transition: 0.5s;
-}   
+}
+
 .note-name {
     text-align: center;
     margin: 50px 20px 20px 20px;
-    font-size:2em;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -39,6 +46,7 @@ a {
     left: 30px;
     z-index: 10;
 }
+
 .tags-trigger {
     text-align: center;
     /* margin-top: 30px; */
@@ -52,18 +60,133 @@ a {
 }
 
 .tips-div {
-    
+
     /* border: 1px solid; */
     width: auto;
     text-align: center;
 }
 
+
+
 .tip {
+    cursor: default;
     display: inline-block;
     border-radius: 10px;
-    border: 5px solid #e7eaf1;
+    border: 3px solid #e7eaf1;
     padding: 5px 10px;
     margin: 10px;
     color: #6d6e6e;
     font-size: 14px;
+    font-weight: lighter;
+}
+
+.canvas-div {
+    width: 350px;
+    /* height: 500px; */
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.skill-div {
+    text-align: center;
+}
+
+#profile-footer {
+    background-color: #333;
+    color: white;
+
+}
+
+#first-section {
+    background-image: url(../images/profile/background1.jpg);
+    background-size: 100% auto ;
+    color: white;
+    text-align: center;
+}
+
+#profile-self-name {
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+#profile-introduction {
+    color: #e7eaf1;
+    font-style: italic;
+    font-size: 25px;
+    margin: 40px 20px;
+    line-height: 1.2;
+}
+
+.half-div {
+    width: 50%;
+    float: left;
+    color: white;
+    
+}
+
+
+
+.head-title {
+    font-size: 50px;
+    font-weight: 300;
+    padding: 10px;
+    
+}
+
+.second-title {
+    font-size: 35px;
+    margin-left: 30px;
+    line-height: 1.5;
+}
+
+.second-title span {
+    padding: 10px 10px;
+    /* line-height: 1.5; */
+}
+
+.third-title {
+    font-size: 25px;
+    margin-left: 45px;
+    padding: 10px;
+}
+
+.section-content {
+    width: 70%;
+    margin: 30px 45px ;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.section-content-head {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.one-third-div {
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 75px 10px;
+    /* flex-direction: column; */
+    display: inline-block;
+}
+
+.certification-div {
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.5;
+    padding: 30px 15px;
+}
+
+.certification-div .iconfont {
+    font-size: 32px;
+}
+
+#profile-tip {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    right: 5px;
+    font-size: 12px;
 }
