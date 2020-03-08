@@ -1,62 +1,15 @@
----
-layout: default
-title: 妙妙屋时间到了
-page-title: 欢迎来到BerryQiu的妙妙屋
-home-title: 
-description: 努力实现新功能中...
----
-
-{% include header.html %}
-{% include boot.html %}
-<main>
-    {% include title.html %}
-    <ul class="post-list">
-      {% include posts_paginator.html %}
-    </ul>
-</main>
-{% include pageNav.html %}
-{% include footer.html %}
-{%- if site.color-bind.index -%}
-<script>
-  $(function() {
-    $(".post-list li").mouseout(function() {
-      $(this).css({
-        "-webkit-box-shadow": "0 1px 3px rgba(0,37,55,.06)",
-        'box-shadow': "0 1px 3px rgba(0,37,55,.06)",
-      })
-    });
-    $(".post-list li").mouseover(function() {
-      var bgcolor = $(this).attr("color");
-      $(this).css({
-        "-webkit-box-shadow": "0 1px 10px "+bgcolor,
-        "box-shadow": "0 1px 10px "+bgcolor
-      })
-    })
-  })
-</script>
-{%- endif -%}
-<script>
-  $(function() {
-    var spsCnt = 0;
-    $("#surprise-trigger").click(function() {
-      spsCnt++;
-      // console.log(spsCnt);
-      switch(spsCnt) {
-        case 5: $(this).text('你点我干什么？');break;
-        case 6: $(this).text('你点我干什么！');break;
-        case 7: $(this).html('呜呜呜别点了'); break;
-        case 8: $(this).text('都说了别点辣'); break;
-        case 9: $(this).text('最后一次警告！'); break;
-        case 10: $(this).html('<svg class="icon" aria-hidden="true"><use xlink:href="#icon-baoxiang"></use></svg>'); break;
-        
-        case 11: $(this).attr('href', '/notes'); break;
-        default: break;
-      }
-      
-    });
-
-    
-
-    
-  })
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=/blog">
+    <title>临时主页</title>
+</head>
+<body>
+    <h1>主页正在翻修中，5秒后将跳转到博客主页</h1>
+    <a href="/blog">
+        <h2>或者点我直接跳转</h2>
+    </a>
+</body>
+</html>

@@ -6,11 +6,11 @@ url: 'https://qiutongxue.github.io' # your host
 baseurl: '/'
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-  首页: '/'
-  标签: '/tags.html'
-  时间线: '/timeline.html'
-  关于博主: '/about.html'
-  友情链接: '/friendLink.html'
+  首页: '/blog'
+  标签: '/blog/tags.html'
+  时间线: '/blog/timeline.html'
+  关于博主: '/blog/about.html'
+  友情链接: '/blog/friendLink.html'
 
 # 博主
 author: Berry Qiu
@@ -72,8 +72,9 @@ SNS-qrcode:
   qq: true
 
   # 分页
-paginate: 10
-paginatepath: ['page:num']
+#paginate: 10
+#paginatepath: ['page:num']
+# paginate_path: "/blog/page:num/"
 
 # 引入Mathjax
 mathjax:
