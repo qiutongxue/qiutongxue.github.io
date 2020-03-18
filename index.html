@@ -4,12 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="5;url=/blog">
+    <script src="/assets/js/vue.js"></script>
     <title>临时主页</title>
+    <style>
+    .circle {
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+    #countdown {
+        display: inline-block;
+        position: relative;
+    }
+    #app {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    span {
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 160px;
+        color: #0070D9;
+        /* font-family: monospace; */
+    }
+
+    body {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        /* background-color: ; */
+        /* height: 100%; */
+    }
+
+    .tip {
+        margin-top: 20px; 
+        font-size: 24px; 
+        font-weight: bold; 
+        max-width: 240px;
+        text-align: center; 
+    }
+    </style>
 </head>
 <body>
-    <h1>主页正在翻修中，5秒后将跳转到博客主页</h1>
-    <a href="/blog">
-        <h2>或者点我直接跳转</h2>
-    </a>
+    <div id="app">
+        <div id="countdown">
+          <svg :width="size" :height="size">
+            <circle fill="transparent" :stroke-width="stroke" stroke="#0070D90D" :r="radius" :cx="circleOffset" :cy="circleOffset"></circle>
+            <circle class="circle" fill="transparent" :stroke-width="stroke" stroke="#0070D9" :r="radius" :cx="circleOffset" :cy="circleOffset" :stroke-dasharray="circumference" :stroke-dashoffset="progress" stroke-linecap="round"></circle>
+          </svg>
+          <span>{{countdown}}</span>
+        </div>
+        <div class="tip">主页翻修中，稍后将跳转至博客主页</div> 
+      </div>
+    <script>
+        new Vue({
+  el: "#app",
+  data: {
+    size: 240,
+    stroke: 20,
+    percentage: 100,
+    timer: null,
+    seconds: 5,
+  },
+  computed: {
+    radius() {
+      return this.size / 2 - this.stroke / 2;
+    },
+    circleOffset() {
+      return this.size / 2;
+    },
+    circumference() {
+      return this.radius * 2 * Math.PI;
+    },
+    progress() {
+      return this.circumference - (this.circumference * this.percentage) / 100;
+    },
+    countdown() {
+      return Math.ceil(this.seconds * this.percentage / 100);
+    }
+  },
+  methods: {
+    animate() {
+      this.timer = setInterval(() => {
+        this.percentage -= 1 / 10;
+
+        if (this.percentage <= 0) {
+          clearInterval(this.timer);
+        //   this.percentage = 0;
+        }
+      }, (this.seconds * 1000) / 100 / 10);
+    }
+  },
+  mounted(){
+      this.animate()
+  }
+});
+
+    </script>
 </body>
 </html>
